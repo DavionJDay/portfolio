@@ -6,8 +6,8 @@ img: sql.png
 alt: image-alt
 
 # Reminder: Update this link with your own project link
-project-url: https://www.coursera.org/account/accomplishments/verify/SNCR71M812ZB
+project-url: https://docs.google.com/document/d/1TOzBvS5FULhHrwSlk4q4jWbbIogklmUHIGPSqOi-PFE/edit?tab=t.0#heading=h.adnh333husy
 
 # Once you've completed your project, update the 'description' below to this one: Implemented various JOIN commands (inner, left, right, self, and cross) in MySQL, utilizing UNION and UNION ALL to efficiently combine and query data from multiple tables.
-description: Implemented various joins (inner, left, right, self, and cross) in MySQL, utilizing UNION and UNION ALL to efficiently combine and query data from multiple tables.
+description: Utilized MariaDB to execute complex SQL queries, leveraging WHERE, AND, OR, and NOT commands to filter login attempts (after-hours, specific dates, outside of Mexico) and retrieve employee data by department (Marketing, Finance, Sales).
 ---

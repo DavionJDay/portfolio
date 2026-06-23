@@ -2,8 +2,7 @@
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- * 
- * Clean Minimalist Refactor for Davion Day Portfolio (2026)
+ * * Clean Minimalist Refactor for Davion Day Portfolio (2026)
  */
 
 body {
@@ -393,26 +392,28 @@ footer .footer-below {
     background-color: #{{ site.color.secondary-dark }};
 }
 
+/* Master Fixed Flexbox Social Media Buttons */
 .btn-social {
-    display: inline-flex;       /* Uses modern flexbox to align the icon */
-    align-items: center;        /* Centers the icon perfectly vertically */
-    justify-content: center;    /* Centers the icon perfectly horizontally */
-    width: 50px;                /* Back to a robust, clean footprint */
+    display: inline-flex !important;  /* Force modern flexbox alignment */
+    align-items: center !important;   /* Mathematical vertical centering */
+    justify-content: center !important;/* Mathematical horizontal centering */
+    width: 50px;
     height: 50px;
     border: 2px solid #fff;
     border-radius: 100%;
     font-size: 20px;
-    color: #fff !important;     /* Forces the icon to be brilliant white before clicking */
+    color: #fff !important;            /* Lock icon color to absolute white */
     background: transparent;
+    text-decoration: none;
     transition: all .25s ease-in-out;
 }
 
 .btn-social:hover,
 .btn-social:focus,
 .btn-social:active {
-    color: #{{ site.color.primary }} !important; /* Inverts icon color to your theme color on hover */
-    background: #fff;                           /* Fills the circle with crisp white on hover */
-    border-color: #fff;
+    color: #{{ site.color.primary }} !important; /* Icon matches primary color on hover */
+    background: #fff !important;                 /* Circle fills solid white */
+    border-color: #fff !important;
     outline: 0;
 }
 

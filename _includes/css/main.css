@@ -394,20 +394,28 @@ footer .footer-below {
 }
 
 .btn-social {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    border: 1.5px solid #fff;
+    display: inline-flex;       /* Uses modern flexbox to align the icon */
+    align-items: center;        /* Centers the icon perfectly vertically */
+    justify-content: center;    /* Centers the icon perfectly horizontally */
+    width: 50px;                /* Back to a robust, clean footprint */
+    height: 50px;
+    border: 2px solid #fff;
     border-radius: 100%;
-    text-align: center;
-    font-size: 18px;
-    line-height: 45px;
-    transition: all 0.2s ease;
+    font-size: 20px;
+    color: #fff !important;     /* Forces the icon to be brilliant white before clicking */
+    background: transparent;
+    transition: all .25s ease-in-out;
 }
 
-.btn-social:hover {
-    background: rgba(255, 255, 255, 0.15);
+.btn-social:hover,
+.btn-social:focus,
+.btn-social:active {
+    color: #{{ site.color.primary }} !important; /* Inverts icon color to your theme color on hover */
+    background: #fff;                           /* Fills the circle with crisp white on hover */
+    border-color: #fff;
+    outline: 0;
 }
+
 
 .btn:focus,
 .btn:active,

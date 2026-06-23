@@ -2,8 +2,7 @@
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- * 
- * Production-Ready Apple Premium Refactor for Davion Day Portfolio
+ * * Production-Ready Apple Premium Refactor for Davion Day Portfolio
  */
 
 /* ==========================================================================
@@ -117,7 +116,7 @@ header .intro-text .skills {
 }
 
 /* ==========================================================================
-   4. Navigation Component (Fixed Visibility & Contrast Bugs)
+   4. Navigation Component
    ========================================================================== */
 .navbar {
     text-transform: none;
@@ -130,14 +129,12 @@ header .intro-text .skills {
     outline: 0;
 }
 
-/* Forces Name/Brand Visibility */
 .navbar-default .navbar-brand,
 .navbar-inverse .navbar-brand {
     color: #1d1d1f !important;
     font-weight: 600;
 }
 
-/* Forces Navigation Link Visibility */
 .navbar-default .navbar-nav > li > a,
 .navbar-inverse .navbar-nav > li > a {
     color: #1d1d1f !important;
@@ -148,20 +145,17 @@ header .intro-text .skills {
     color: #0066cc !important;
 }
 
-/* Forces Hamburger Menu Visibility (Gray Outline Box) */
 .navbar-default .navbar-toggle,
 .navbar-inverse .navbar-toggle {
     border-color: #d2d2d7 !important;
     background-color: transparent !important;
 }
 
-/* Forces the 3 Lines Inside Hamburger to be Black instead of White */
 .navbar-default .navbar-toggle .icon-bar,
 .navbar-inverse .navbar-toggle .icon-bar {
     background-color: #1d1d1f !important;
 }
 
-/* Smooth Background Hover for Mobile Toggle Button */
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle:hover,
@@ -205,14 +199,13 @@ section.first {
 }
 
 /* ==========================================================================
-   6. Portfolio Grid Component (Optimized, Premium Layout Sizing)
+   6. Portfolio Grid Component
    ========================================================================== */
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 30px;
 }
 
-/* Constrained to a highly practical, aesthetically pleasing card size */
 #portfolio .portfolio-item .portfolio-link {
     display: block;
     position: relative;
@@ -224,7 +217,6 @@ section.first {
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
 }
 
-/* Sleek Premium Card Lift Hover Effect */
 #portfolio .portfolio-item .portfolio-link:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -314,7 +306,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* ==========================================================================
-   8. Footer Layout Component
+   8. Footer Layout Component (Social Buttons Fixed to Match Resume Style)
    ========================================================================== */
 footer {
     color: #86868b;
@@ -352,27 +344,27 @@ footer .footer-below {
     color: #86868b;
 }
 
+/* Social Buttons adjusted to solid black layout to mirror the resume style */
 .btn-social {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 44px;
     height: 44px;
-    border: 1px solid #d2d2d7;
+    border: none !important;
     border-radius: 100%;
     font-size: 18px;
-    color: #1d1d1f !important;
-    background: #ffffff;
+    color: #ffffff !important;
+    background: #1d1d1f !important;
     text-decoration: none;
-    transition: all .2s ease;
+    transition: background .2s ease;
 }
 
 .btn-social:hover,
 .btn-social:focus,
 .btn-social:active {
-    color: #0071e3 !important;
-    border-color: #0071e3 !important;
-    background: #ffffff !important;
+    background: #333336 !important;
+    color: #ffffff !important;
     outline: 0;
 }
 
@@ -383,7 +375,7 @@ footer .footer-below {
 }
 
 /* ==========================================================================
-   9. Modals & Interface Components
+   9. Modals & Interface Components (Fixed Icon Corner Clipping Bug)
    ========================================================================== */
 .scroll-top {
     z-index: 1049;
@@ -420,8 +412,10 @@ footer .footer-below {
     margin: 25px 0;
 }
 
+/* Softened image radius profile inside description modals to protect asset corners */
 .portfolio-modal .modal-content .portfolio-image {
     max-width: 35%;
+    border-radius: 8px !important;
 }
 
 .portfolio-modal .close-modal {

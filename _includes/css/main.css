@@ -306,7 +306,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 /* ==========================================================================
-   8. Footer Layout Component (Social Buttons Fixed to Match Resume Style)
+   8. Footer Layout Component
    ========================================================================== */
 footer {
     color: #86868b;
@@ -344,7 +344,6 @@ footer .footer-below {
     color: #86868b;
 }
 
-/* Social Buttons adjusted to solid black layout to mirror the resume style */
 .btn-social {
     display: inline-flex !important;
     align-items: center !important;
@@ -375,7 +374,7 @@ footer .footer-below {
 }
 
 /* ==========================================================================
-   9. Modals & Interface Components (Fixed Icon Corner Clipping Bug)
+   9. Modals & Scroll Interface Component (Fixed Scroll Arrow Centering Bug)
    ========================================================================== */
 .scroll-top {
     z-index: 1049;
@@ -384,12 +383,19 @@ footer .footer-below {
     bottom: 2%;
 }
 
+/* Added explicit flex layout and killed legacy theme padding alignment overrides */
 .scroll-top .btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     width: 40px;
     height: 40px;
+    padding: 0 !important;
+    line-height: 1 !important;
     border-radius: 100%;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid #d2d2d7;
     color: #1d1d1f;
 }
@@ -412,7 +418,6 @@ footer .footer-below {
     margin: 25px 0;
 }
 
-/* Softened image radius profile inside description modals to protect asset corners */
 .portfolio-modal .modal-content .portfolio-image {
     max-width: 35%;
     border-radius: 8px !important;

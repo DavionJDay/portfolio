@@ -1,6 +1,10 @@
 <style>
-/* 1. Base style for the button */
-  a.portfolio-direct-link {
+/* The "Sledgehammer" - bypasses all Bootstrap link and button transitions */
+  .modal-body .portfolio-direct-link,
+  .modal-body .portfolio-direct-link:hover,
+  .modal-body .portfolio-direct-link:focus,
+  .modal-body .portfolio-direct-link:active,
+  .modal-body .portfolio-direct-link:visited {
       display: inline-block !important;
       background-color: #1d1d1f !important;
       background-image: none !important;
@@ -14,21 +18,13 @@
       letter-spacing: -0.01em !important;
       text-decoration: none !important;
       box-shadow: none !important;
-      transition: background-color 0.2s ease !important;
       cursor: pointer !important;
-      opacity: 1 !important; /* Explicitly set to solid */
-  }
-
-  /* 2. Hover state: Override the global opacity rule */
-  a.portfolio-direct-link:hover,
-  a.portfolio-direct-link:focus,
-  a.portfolio-direct-link:active {
-      background-color: #333336 !important;
-      color: #ffffff !important;
-      text-decoration: none !important;
-      opacity: 1 !important;        /* FORCE SOLID */
-      filter: none !important;      /* KILL FILTERS */
-      outline: 0 !important;
+      
+      /* THIS IS THE KEY: */
+      opacity: 1 !important;
+      filter: none !important;
+      transition: none !important;
+      -webkit-transition: none !important;
   }
 </style>
 

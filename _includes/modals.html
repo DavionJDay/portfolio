@@ -1,28 +1,36 @@
 <style>
-  /* Use a chained, high-specificity selector */
-  .portfolio-modal .modal-body a.portfolio-direct-link {
+  .portfolio-direct-link {
+      /* Reset everything */
+      position: relative !important;
+      z-index: 10 !important;
       display: inline-block !important;
+      
+      /* Colors */
       background-color: #1d1d1f !important;
       color: #ffffff !important;
+      
+      /* Reset Bootstrap artifacts */
       border: none !important;
+      box-shadow: none !important;
+      background-image: none !important;
+      outline: none !important;
+      
+      /* Padding/Sizing */
       border-radius: 30px !important;
       padding: 12px 26px !important;
+      font-weight: 500 !important;
       text-decoration: none !important;
-      opacity: 1 !important;
-      filter: none !important;
-      transition: none !important;
   }
 
-  /* Force the hover state for the specific path */
-  .portfolio-modal .modal-body a.portfolio-direct-link:hover,
-  .portfolio-modal .modal-body a.portfolio-direct-link:focus,
-  .portfolio-modal .modal-body a.portfolio-direct-link:active {
+  .portfolio-direct-link:hover {
+      /* Force the color */
       background-color: #333336 !important;
+      background-image: none !important;
       color: #ffffff !important;
+      
+      /* Kill overlays */
+      box-shadow: none !important;
       opacity: 1 !important;
-      filter: none !important;
-      text-decoration: none !important;
-      transition: none !important;
   }
 </style>
 

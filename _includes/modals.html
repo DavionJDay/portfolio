@@ -1,3 +1,35 @@
+<style>
+  /* Premium Pill-Shaped Modal Action Link Buttons */
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button {
+      display: inline-block !important;
+      background-color: #1d1d1f !important;
+      background-image: none !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 30px !important;
+      padding: 10px 24px !important;
+      font-weight: 500 !important;
+      font-size: 14px !important;
+      letter-spacing: -0.01em !important;
+      transition: background-color 0.2s ease, color 0.2s ease !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+  }
+
+  /* Charcoal Gray Hover State */
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
+      background-color: #333336 !important;
+      background-image: none !important;
+      color: #ffffff !important;
+      border-color: #333336 !important;
+      opacity: 1 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+  }
+</style>
+
 {% for post in site.posts %}
 <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">
@@ -21,12 +53,7 @@
             {% if post.project-url != null %}
               <a href="{{ post.project-url }}" 
                  target="_blank" 
-                 class="btn btn-lg btn-default modal-view-button"
-                 style="background-color: #1d1d1f !important; color: #ffffff !important; border: none !important; border-radius: 30px !important; padding: 10px 24px !important; font-weight: 500 !important; font-size: 14px !important; letter-spacing: -0.01em !important; text-decoration: none !important; box-shadow: none !important; display: inline-block;"
-                 onmouseover="this.style.setProperty('background-color', '#333336', 'important');"
-                 onmouseout="this.style.setProperty('background-color', '#1d1d1f', 'important');"
-                 onfocus="this.style.setProperty('background-color', '#333336', 'important');"
-                 onblur="this.style.setProperty('background-color', '#1d1d1f', 'important');">
+                 class="btn btn-lg btn-default modal-view-button">
                 View Project
               </a>
             {% endif %}

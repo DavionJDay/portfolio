@@ -2,8 +2,7 @@
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- * 
- * Production-Ready Apple Premium Refactor for Davion Day Portfolio
+ * * Production-Ready Apple Premium Refactor for Davion Day Portfolio
  */
 
 /* ==========================================================================
@@ -272,8 +271,8 @@ section.first {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    background: #0077ed;
-    color: #ffffff;
+    background: #333336 !important;
+    color: #ffffff !important;
 }
 
 .floating-label-form-group {
@@ -412,188 +411,3 @@ footer .footer-below {
     .portfolio-modal .modal-content {
         padding: 40px 0;
         border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    }
-}
-
-.portfolio-modal .modal-content h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-}
-
-.portfolio-modal .modal-content img {
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .modal-content .item-details {
-    margin: 25px 0;
-}
-
-.portfolio-modal .modal-content .portfolio-image {
-    max-width: 35%;
-    border-radius: 8px !important;
-}
-
-.portfolio-modal .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    background-color: #f5f5f7;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1060;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.portfolio-modal .close-modal:hover {
-    background-color: #e5e5ea;
-    opacity: 1;
-}
-
-.portfolio-modal .close-modal .lr {
-    z-index: 1061;
-    width: 2px;
-    height: 18px;
-    background-color: #1d1d1f;
-    transform: rotate(45deg);
-    position: absolute;
-}
-
-.portfolio-modal .close-modal .lr .rl {
-    z-index: 1062;
-    width: 2px;
-    height: 18px;
-    background-color: #1d1d1f;
-    transform: rotate(90deg);
-    position: absolute;
-}
-
-.navbar-nav>.active>a {
-    background-color: #f5f5f7 !important;
-    color: #0066cc !important;
-}
-
-.modal.fade.in {
-    transform: translateZ(0);
-}
-
-.header-image {
-    display: block;
-    max-width: 18%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-}
-
-.portfolio-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 18px;
-}
-
-.resume-button {
-    background: #1d1d1f;
-    color: #ffffff;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 24px;
-}
-
-.resume-button:hover {
-    background: #333336;
-    color: #ffffff;
-}
-
-/* Premium Pill-Shaped Modal Action Link Buttons - High Specificity Block */
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button {
-    display: inline-block !important;
-    background-color: #1d1d1f !important;
-    background-image: none !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 30px !important;
-    padding: 10px 24px !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    letter-spacing: -0.01em !important;
-    transition: background-color 0.2s ease, color 0.2s ease !important;
-    text-decoration: none !important;
-    box-shadow: none !important;
-}
-
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
-    background-color: #333336 !important;
-    background-image: none !important;
-    color: #ffffff !important;
-    border-color: #333336 !important;
-    opacity: 1 !important;
-    outline: 0 !important;
-    box-shadow: none !important;
-}
-
-/* ==========================================================================
-   10. Consolidated Premium Desktop Layout Breakpoint (>= 768px)
-   ========================================================================== */
-@media(min-width:768px) {
-    section {
-        padding: 120px 0;
-    }
-    section h2 {
-        font-size: 3.2em;
-    }
-    section.first {
-        padding-top: 120px;
-    }
-
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 120px;
-    }
-    header .intro-text .name {
-        font-size: 5em;
-    }
-    header .intro-text .skills {
-        font-size: 2em;
-    }
-    
-    header .header-image {
-        max-width: 130px;
-    }
-
-    .navbar-fixed-top {
-        padding: 16px 0;
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        transition: padding 0.3s ease;
-    }
-    .navbar-fixed-top .navbar-brand {
-        font-size: 1.3em;
-        letter-spacing: -0.01em;
-    }
-    .navbar-fixed-top.navbar-shrink {
-        padding: 12px 0;
-    }
-
-    #portfolio .portfolio-item {
-        margin: 0 0 40px;
-    }
-    
-    #portfolio .portfolio-item .portfolio-link {
-        max-width: 350px;
-    }
-}

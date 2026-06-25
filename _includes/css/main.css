@@ -134,6 +134,12 @@ header .intro-text .skills {
 .navbar-inverse .navbar-brand {
     color: #1d1d1f !important;
     font-weight: 600;
+    transition: color 0.2s ease; /* This makes the color fade in smoothly */
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-inverse .navbar-brand:hover {
+    color: #0066cc !important;
 }
 
 .navbar-default .navbar-nav > li > a,

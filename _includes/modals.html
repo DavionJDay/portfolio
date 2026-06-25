@@ -1,30 +1,25 @@
 <style>
-/* The "Sledgehammer" - bypasses all Bootstrap link and button transitions */
-  .modal-body .portfolio-direct-link,
-  .modal-body .portfolio-direct-link:hover,
-  .modal-body .portfolio-direct-link:focus,
-  .modal-body .portfolio-direct-link:active,
-  .modal-body .portfolio-direct-link:visited {
+/* Base Style */
+  .portfolio-direct-link {
       display: inline-block !important;
       background-color: #1d1d1f !important;
-      background-image: none !important;
       color: #ffffff !important;
       border: none !important;
       border-radius: 30px !important;
       padding: 12px 26px !important;
       font-weight: 500 !important;
       font-size: 14px !important;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif !important;
-      letter-spacing: -0.01em !important;
       text-decoration: none !important;
-      box-shadow: none !important;
-      cursor: pointer !important;
-      
-      /* THIS IS THE KEY: */
+      transition: background-color 0.3s ease !important; /* Only animate color */
       opacity: 1 !important;
-      filter: none !important;
-      transition: none !important;
-      -webkit-transition: none !important;
+  }
+
+  /* Force the Hover Color independently */
+  .portfolio-direct-link:hover {
+      background-color: #333336 !important; /* This is your charcoal gray */
+      color: #ffffff !important;
+      opacity: 1 !important;
+      text-decoration: none !important;
   }
 </style>
 

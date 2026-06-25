@@ -1,6 +1,6 @@
 <style>
-/* Completely isolated custom class to bypass Bootstrap entirely */
-  .portfolio-direct-link {
+/* 1. Base style for the button */
+  a.portfolio-direct-link {
       display: inline-block !important;
       background-color: #1d1d1f !important;
       background-image: none !important;
@@ -14,26 +14,21 @@
       letter-spacing: -0.01em !important;
       text-decoration: none !important;
       box-shadow: none !important;
-      transition: background-color 0.2s ease, transform 0.2s ease !important;
+      transition: background-color 0.2s ease !important;
       cursor: pointer !important;
+      opacity: 1 !important; /* Explicitly set to solid */
   }
 
-  /* Clean Premium Charcoal Hover State */
-  .portfolio-direct-link:hover,
-  .portfolio-direct-link:focus,
-  .portfolio-direct-link:active {
+  /* 2. Hover state: Override the global opacity rule */
+  a.portfolio-direct-link:hover,
+  a.portfolio-direct-link:focus,
+  a.portfolio-direct-link:active {
       background-color: #333336 !important;
-      background-image: none !important;
       color: #ffffff !important;
       text-decoration: none !important;
-      opacity: 1 !important; /* Forces the button to stay fully solid */
+      opacity: 1 !important;        /* FORCE SOLID */
+      filter: none !important;      /* KILL FILTERS */
       outline: 0 !important;
-  }
-
-  /* ADD THIS SPECIFIC OVERRIDE TO KILL THE GLOBAL LINK FADE */
-  a.portfolio-direct-link:hover {
-      opacity: 1 !important;
-      filter: none !important;
   }
 </style>
 

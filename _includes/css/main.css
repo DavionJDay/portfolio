@@ -1,35 +1,35 @@
 /*!
- * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- * 
- * Production-Ready Apple Premium Refactor for Davion Day Portfolio
- */
+ * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ * 
+ * Production-Ready Apple Premium Refactor for Davion Day Portfolio
+ */
 
 /* ==========================================================================
-   1. Core Base Styles
-   ========================================================================= */
+   1. Core Base Styles
+   ========================================================================= */
 body {
-    overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #ffffff;
-    color: #1d1d1f;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 p {
-    font-size: 17px;
-    line-height: 1.52942;
-    font-weight: 400;
-    letter-spacing: -0.011em;
-    color: #6e6e73;
+    font-size: 17px;
+    line-height: 1.52942;
+    font-weight: 400;
+    letter-spacing: -0.011em;
+    color: #6e6e73;
 }
 
 p.small {
-    font-size: 14px;
-    line-height: 1.42859;
-    color: #86868b;
+    font-size: 14px;
+    line-height: 1.42859;
+    color: #86868b;
 }
 
 a,
@@ -37,563 +37,563 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    outline: 0;
-    color: #0066cc;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
+    outline: 0;
+    color: #0066cc;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
 }
 
 a:hover {
-    opacity: 0.7;
+    opacity: 0.7;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    text-transform: none;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-    font-weight: 600;
-    color: #1d1d1f;
-    letter-spacing: -0.022em;
+    text-transform: none;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.022em;
 }
 
 /* ==========================================================================
-   2. Dividers & Utilities
-   ========================================================================== */
+   2. Dividers & Utilities
+   ========================================================================== */
 hr.star-light,
 hr.star-primary {
-    margin: 40px auto;
-    padding: 0;
-    max-width: 100%;
-    width: 80px;
-    border: 0;
-    border-top: solid 1px #d2d2d7;
-    text-align: center;
-    overflow: visible;
+    margin: 40px auto;
+    padding: 0;
+    max-width: 100%;
+    width: 80px;
+    border: 0;
+    border-top: solid 1px #d2d2d7;
+    text-align: center;
+    overflow: visible;
 }
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: none !important;
+    content: none !important;
 }
 
 .img-centered {
-    margin: 0 auto;
+    margin: 0 auto;
 }
 
 /* ==========================================================================
-   3. Header Section
-   ========================================================================== */
+   3. Header Section
+   ========================================================================== */
 header {
-    text-align: center;
-    color: #1d1d1f;
-    background: #ffffff;
+    text-align: center;
+    color: #1d1d1f;
+    background: #ffffff;
 }
 
 header .container {
-    padding-top: 140px;
-    padding-bottom: 80px;
+    padding-top: 140px;
+    padding-bottom: 80px;
 }
 
 header img {
-    display: block;
-    margin: 0 auto 30px;
+    display: block;
+    margin: 0 auto 30px;
 }
 
 header .intro-text .name {
-    display: block;
-    text-transform: none;
-    font-size: 3em;
-    font-weight: 700;
-    color: #1d1d1f;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+    display: block;
+    text-transform: none;
+    font-size: 3em;
+    font-weight: 700;
+    color: #1d1d1f;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
 }
 
 header .intro-text .skills {
-    font-size: 1.5em;
-    font-weight: 400;
-    color: #6e6e73;
-    margin-top: 15px;
-    letter-spacing: -0.015em;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #6e6e73;
+    margin-top: 15px;
+    letter-spacing: -0.015em;
 }
 
 /* ==========================================================================
-   4. Navigation Component
-   ========================================================================== */
+   4. Navigation Component
+   ========================================================================== */
 .navbar {
-    text-transform: none;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 500;
-    font-size: 14px;
+    text-transform: none;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .navbar a:focus {
-    outline: 0;
+    outline: 0;
 }
 
 .navbar-default .navbar-brand,
 .navbar-inverse .navbar-brand {
-    color: #1d1d1f !important;
-    font-weight: 600;
+    color: #1d1d1f !important;
+    font-weight: 600;
 }
 
 .navbar-default .navbar-nav > li > a,
 .navbar-inverse .navbar-nav > li > a {
-    color: #1d1d1f !important;
+    color: #1d1d1f !important;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:hover {
-    color: #0066cc !important;
+    color: #0066cc !important;
 }
 
 .navbar-default .navbar-toggle,
 .navbar-inverse .navbar-toggle {
-    border-color: #d2d2d7 !important;
-    background-color: transparent !important;
+    border-color: #d2d2d7 !important;
+    background-color: transparent !important;
 }
 
 .navbar-default .navbar-toggle .icon-bar,
 .navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #1d1d1f !important;
+    background-color: #1d1d1f !important;
 }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: #f5f5f7 !important;
+    background-color: #f5f5f7 !important;
 }
 
 .navbar .navbar-nav {
-    letter-spacing: 0;
+    letter-spacing: 0;
 }
 
 .navbar-default,
 .navbar-inverse {
-    border: 0;
-    background: #ffffff;
+    border: 0;
+    background: #ffffff;
 }
 
 /* ==========================================================================
-   5. Structural Layout Sections
-   ========================================================================== */
+   5. Structural Layout Sections
+   ========================================================================== */
 section {
-    padding: 60px 0;
+    padding: 60px 0;
 }
 
 section h2 {
-    margin: 0;
-    font-size: 2.4em;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    margin: 0;
+    font-size: 2.4em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
 }
 
 section.success {
-    color: #1d1d1f;
-    background: #f5f5f7;
-    border-top: 1px solid #e5e5ea;
-    border-bottom: 1px solid #e5e5ea;
+    color: #1d1d1f;
+    background: #f5f5f7;
+    border-top: 1px solid #e5e5ea;
+    border-bottom: 1px solid #e5e5ea;
 }
 
 section.first {
-    padding-top: 60px;
+    padding-top: 60px;
 }
 
 /* ==========================================================================
-   6. Portfolio Grid Component
-   ========================================================================== */
+   6. Portfolio Grid Component
+   ========================================================================== */
 #portfolio .portfolio-item {
-    right: 0;
-    margin: 0 0 30px;
+    right: 0;
+    margin: 0 0 30px;
 }
 
 #portfolio .portfolio-item .portfolio-link {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    max-width: 280px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
 }
 
 #portfolio .portfolio-item .portfolio-link:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 #portfolio .portfolio-item .portfolio-link .caption {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: rgba(255, 255, 255, 0.95);
-    transition: all ease 0.3s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.95);
+    transition: all ease 0.3s;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
-    opacity: 1;
+    opacity: 1;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 20px;
-    margin-top: -12px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    color: #1d1d1f;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d1d1f;
 }
 
 #portfolio * {
-    z-index: 2;
+    z-index: 2;
 }
 
 /* ==========================================================================
-   7. Interactive Buttons & Form Fields
-   ========================================================================== */
+   7. Interactive Buttons & Form Fields
+   ========================================================================== */
 .btn-outline {
-    margin-top: 20px;
-    border: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: #ffffff;
-    background: #0071e3;
-    padding: 12px 26px;
-    border-radius: 30px;
-    letter-spacing: -0.01em;
-    transition: background 0.2s ease;
+    margin-top: 20px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #0071e3;
+    padding: 12px 26px;
+    border-radius: 30px;
+    letter-spacing: -0.01em;
+    transition: background 0.2s ease;
 }
 
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    background: #0077ed;
-    color: #ffffff;
+    background: #0077ed;
+    color: #ffffff;
 }
 
 .floating-label-form-group {
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: .5em;
-    border-bottom: 1px solid #d2d2d7;
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #d2d2d7;
 }
 
 .floating-label-form-group input,
 .floating-label-form-group textarea {
-    z-index: 1;
-    position: relative;
-    padding-right: 0;
-    padding-left: 0;
-    border: 0;
-    border-radius: 0;
-    font-size: 1.2em;
-    background: 0 0;
-    box-shadow: none!important;
-    resize: none;
+    z-index: 1;
+    position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    border: 0;
+    border-radius: 0;
+    font-size: 1.2em;
+    background: 0 0;
+    box-shadow: none!important;
+    resize: none;
 }
 
 .floating-label-form-group:not(:first-child) {
-    padding-left: 14px;
-    border-left: 1px solid #e5e5ea;
+    padding-left: 14px;
+    border-left: 1px solid #e5e5ea;
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid #d2d2d7;
+    border-top: 1px solid #d2d2d7;
 }
 
 /* ==========================================================================
-   8. Footer Layout Component
-   ========================================================================== */
+   8. Footer Layout Component
+   ========================================================================== */
 footer {
-    color: #86868b;
-    font-size: 12px;
+    color: #86868b;
+    font-size: 12px;
 }
 
 footer h3 {
-    font-size: 14px;
-    color: #1d1d1f;
-    margin-bottom: 20px;
+    font-size: 14px;
+    color: #1d1d1f;
+    margin-bottom: 20px;
 }
 
 footer .footer-above {
-    padding-top: 60px;
-    background-color: #f5f5f7;
-    border-top: 1px solid #d2d2d7;
+    padding-top: 60px;
+    background-color: #f5f5f7;
+    border-top: 1px solid #d2d2d7;
 }
 
 footer .footer-col {
-    margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 footer .footer-col p {
-    color: #6e6e73;
+    color: #6e6e73;
 }
 
 footer .footer-col h3 {
-    color: #1d1d1f;
+    color: #1d1d1f;
 }
 
 footer .footer-below {
-    padding: 30px 0;
-    background-color: #f5f5f7;
-    border-top: 1px solid #d2d2d7;
-    color: #86868b;
+    padding: 30px 0;
+    background-color: #f5f5f7;
+    border-top: 1px solid #d2d2d7;
+    color: #86868b;
 }
 
 .btn-social {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 44px;
-    height: 44px;
-    border: none !important;
-    border-radius: 100%;
-    font-size: 18px;
-    color: #ffffff !important;
-    background: #1d1d1f !important;
-    text-decoration: none;
-    transition: background .2s ease;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px;
+    height: 44px;
+    border: none !important;
+    border-radius: 100%;
+    font-size: 18px;
+    color: #ffffff !important;
+    background: #1d1d1f !important;
+    text-decoration: none;
+    transition: background .2s ease;
 }
 
 .btn-social:hover,
 .btn-social:focus,
 .btn-social:active {
-    background: #333336 !important;
-    color: #ffffff !important;
-    outline: 0;
+    background: #333336 !important;
+    color: #ffffff !important;
+    outline: 0;
 }
 
 .btn:focus,
 .btn:active,
 .btn.active {
-    outline: 0;
+    outline: 0;
 }
 
 /* ==========================================================================
-   9. Modals & Scroll Interface Component (Ultra-Specificity Update)
-   ========================================================================== */
+   9. Modals & Scroll Interface Component (Ultra-Specificity Update)
+   ========================================================================== */
 .scroll-top {
-    z-index: 1049;
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
+    z-index: 1049;
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
 }
 
 .scroll-top .btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 40px;
-    height: 40px;
-    padding: 0 !important;
-    line-height: 1 !important;
-    border-radius: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid #d2d2d7;
-    color: #1d1d1f;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    line-height: 1 !important;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid #d2d2d7;
+    color: #1d1d1f;
 }
 
 .portfolio-modal .modal-content {
-    padding: 80px 0;
-    background-color: #ffffff;
+    padding: 80px 0;
+    background-color: #ffffff;
 }
 
 @media (max-width: 767px) {
-    .portfolio-modal {
-        bottom: 60px !important;
-    }
-    .portfolio-modal .modal-content {
-        padding: 40px 0;
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    }
+    .portfolio-modal {
+        bottom: 60px !important;
+    }
+    .portfolio-modal .modal-content {
+        padding: 40px 0;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
 }
 
 .portfolio-modal .modal-content h2 {
-    font-size: 2.5em;
-    font-weight: 700;
+    font-size: 2.5em;
+    font-weight: 700;
 }
 
 .portfolio-modal .modal-content img {
-    margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .portfolio-modal .modal-content .item-details {
-    margin: 25px 0;
+    margin: 25px 0;
 }
 
 .portfolio-modal .modal-content .portfolio-image {
-    max-width: 35%;
-    border-radius: 8px !important;
+    max-width: 35%;
+    border-radius: 8px !important;
 }
 
 .portfolio-modal .close-modal {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    background-color: #f5f5f7;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1060;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background-color: #f5f5f7;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1060;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .portfolio-modal .close-modal:hover {
-    background-color: #e5e5ea;
-    opacity: 1;
+    background-color: #e5e5ea;
+    opacity: 1;
 }
 
 .portfolio-modal .close-modal .lr {
-    z-index: 1061;
-    width: 2px;
-    height: 18px;
-    background-color: #1d1d1f;
-    transform: rotate(45deg);
-    position: absolute;
+    z-index: 1061;
+    width: 2px;
+    height: 18px;
+    background-color: #1d1d1f;
+    transform: rotate(45deg);
+    position: absolute;
 }
 
 .portfolio-modal .close-modal .lr .rl {
-    z-index: 1062;
-    width: 2px;
-    height: 18px;
-    background-color: #1d1d1f;
-    transform: rotate(90deg);
-    position: absolute;
+    z-index: 1062;
+    width: 2px;
+    height: 18px;
+    background-color: #1d1d1f;
+    transform: rotate(90deg);
+    position: absolute;
 }
 
 .navbar-nav>.active>a {
-    background-color: #f5f5f7 !important;
-    color: #0066cc !important;
+    background-color: #f5f5f7 !important;
+    color: #0066cc !important;
 }
 
 .modal.fade.in {
-    transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .header-image {
-    display: block;
-    max-width: 18%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    display: block;
+    max-width: 18%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
 }
 
 .portfolio-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 18px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;
 }
 
 .resume-button {
-    background: #1d1d1f;
-    color: #ffffff;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 24px;
+    background: #1d1d1f;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
 }
 
 .resume-button:hover {
-    background: #333336;
-    color: #ffffff;
+    background: #333336;
+    color: #ffffff;
 }
 
 /* Premium Pill-Shaped Modal Action Link Buttons - High Specificity Block */
 .portfolio-modal .modal-content .btn.btn-default.modal-view-button {
-    display: inline-block !important;
-    background-color: #1d1d1f !important;
-    background-image: none !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 30px !important;
-    padding: 10px 24px !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    letter-spacing: -0.01em !important;
-    transition: background-color 0.2s ease, color 0.2s ease !important;
-    text-decoration: none !important;
-    box-shadow: none !important;
+    display: inline-block !important;
+    background-color: #1d1d1f !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    letter-spacing: -0.01em !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
 }
 
 .portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
 .portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
 .portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
-    background-color: #333336 !important;
-    background-image: none !important;
-    color: #ffffff !important;
-    border-color: #333336 !important;
-    opacity: 1 !important;
-    outline: 0 !important;
-    box-shadow: none !important;
+    background-color: #333336 !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border-color: #333336 !important;
+    opacity: 1 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 /* ==========================================================================
-   10. Consolidated Premium Desktop Layout Breakpoint (>= 768px)
-   ========================================================================== */
+   10. Consolidated Premium Desktop Layout Breakpoint (>= 768px)
+   ========================================================================== */
 @media(min-width:768px) {
-    section {
-        padding: 120px 0;
-    }
-    section h2 {
-        font-size: 3.2em;
-    }
-    section.first {
-        padding-top: 120px;
-    }
+    section {
+        padding: 120px 0;
+    }
+    section h2 {
+        font-size: 3.2em;
+    }
+    section.first {
+        padding-top: 120px;
+    }
 
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 120px;
-    }
-    header .intro-text .name {
-        font-size: 5em;
-    }
-    header .intro-text .skills {
-        font-size: 2em;
-    }
-    
-    header .header-image {
-        max-width: 130px;
-    }
+    header .container {
+        padding-top: 200px;
+        padding-bottom: 120px;
+    }
+    header .intro-text .name {
+        font-size: 5em;
+    }
+    header .intro-text .skills {
+        font-size: 2em;
+    }
+    
+    header .header-image {
+        max-width: 130px;
+    }
 
-    .navbar-fixed-top {
-        padding: 16px 0;
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        transition: padding 0.3s ease;
-    }
-    .navbar-fixed-top .navbar-brand {
-        font-size: 1.3em;
-        letter-spacing: -0.01em;
-    }
-    .navbar-fixed-top.navbar-shrink {
-        padding: 12px 0;
-    }
+    .navbar-fixed-top {
+        padding: 16px 0;
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        transition: padding 0.3s ease;
+    }
+    .navbar-fixed-top .navbar-brand {
+        font-size: 1.3em;
+        letter-spacing: -0.01em;
+    }
+    .navbar-fixed-top.navbar-shrink {
+        padding: 12px 0;
+    }
 
-    #portfolio .portfolio-item {
-        margin: 0 0 40px;
-    }
-    
-    #portfolio .portfolio-item .portfolio-link {
-        max-width: 350px;
-    }
+    #portfolio .portfolio-item {
+        margin: 0 0 40px;
+    }
+    
+    #portfolio .portfolio-item .portfolio-link {
+        max-width: 350px;
+    }
 }

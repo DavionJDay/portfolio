@@ -2,8 +2,7 @@
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- * 
- * Production-Ready Apple Premium Refactor for Davion Day Portfolio
+ * * Production-Ready Apple Premium Refactor for Davion Day Portfolio
  */
 
 /* ==========================================================================
@@ -214,7 +213,7 @@ section.first {
     max-width: 280px; /* Optimized down from 350px for elegant, proportional mobile sizing */
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
 }
 
@@ -405,14 +404,16 @@ footer .footer-below {
     background-color: #ffffff;
 }
 
-/* Forces a clean, consistent bottom gap on mobile layout to match desktop */
+/* Forces a fixed, instant bottom gap on mobile without needing to scroll */
 @media (max-width: 767px) {
+    .portfolio-modal {
+        bottom: 60px !important; /* Instantly lifts the entire window up by 60px */
+    }
     .portfolio-modal .modal-content {
-        min-height: calc(100vh - 60px) !important;
-        margin-bottom: 60px !important;
+        padding: 40px 0; /* Slightly streamlined padding for better mobile viewing */
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     }
 }
 

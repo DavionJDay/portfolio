@@ -603,3 +603,9 @@ footer .footer-below {
         max-width: 350px;
     }
 }
+
+/* Override the global link fade for the modal button */
+.modal-view-button:hover,
+.portfolio-direct-link:hover {
+    opacity: 1 !important;
+}

@@ -46,12 +46,10 @@
             <p>{{ post.description }}</p>
             {% endif %}
             
-            {% if post.project-url != null %}
-  <a href="{{ post.project-url }}" 
-     target="_blank" 
-     class="portfolio-direct-link" 
-     onmouseover="this.style.backgroundColor='#333336'" 
-     onmouseout="this.style.backgroundColor='#1d1d1f'">
+             <a href="{{ post.project-url }}" 
+                target="_blank" 
+                class="portfolio-direct-link" 
+                style="opacity: 1 !important;">
                 View Project
               </a>
             {% endif %}

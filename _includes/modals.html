@@ -1,32 +1,33 @@
 <style>
-  /* Premium Pill-Shaped Modal Action Link Buttons */
-  .portfolio-modal .modal-content .btn.btn-default.modal-view-button {
+  /* Completely isolated custom class to bypass Bootstrap entirely */
+  .portfolio-direct-link {
       display: inline-block !important;
       background-color: #1d1d1f !important;
       background-image: none !important;
       color: #ffffff !important;
       border: none !important;
       border-radius: 30px !important;
-      padding: 10px 24px !important;
+      padding: 12px 26px !important;
       font-weight: 500 !important;
       font-size: 14px !important;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif !important;
       letter-spacing: -0.01em !important;
-      transition: background-color 0.2s ease, color 0.2s ease !important;
       text-decoration: none !important;
       box-shadow: none !important;
+      transition: background-color 0.2s ease, transform 0.2s ease !important;
+      cursor: pointer !important;
   }
 
-  /* Charcoal Gray Hover State */
-  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
-  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
-  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
+  /* Clean Premium Charcoal Hover State */
+  .portfolio-direct-link:hover,
+  .portfolio-direct-link:focus,
+  .portfolio-direct-link:active {
       background-color: #333336 !important;
       background-image: none !important;
       color: #ffffff !important;
-      border-color: #333336 !important;
+      text-decoration: none !important;
       opacity: 1 !important;
       outline: 0 !important;
-      box-shadow: none !important;
   }
 </style>
 
@@ -53,7 +54,7 @@
             {% if post.project-url != null %}
               <a href="{{ post.project-url }}" 
                  target="_blank" 
-                 class="btn btn-lg btn-default modal-view-button">
+                 class="portfolio-direct-link">
                 View Project
               </a>
             {% endif %}

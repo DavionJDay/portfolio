@@ -604,8 +604,11 @@ footer .footer-below {
     }
 }
 
-/* Override the global link fade for the modal button */
-.modal-view-button:hover,
-.portfolio-direct-link:hover {
+/* Unified Override: One single block to rule them all */
+.portfolio-direct-link:hover,
+.modal-view-button:hover {
     opacity: 1 !important;
+    filter: none !important;
+    /* Kill the global transition, then add back only what you want */
+    transition: background-color 0.2s ease !important;
 }

@@ -261,7 +261,7 @@ section.first {
     font-size: 15px;
     font-weight: 500;
     color: #ffffff;
-    background: #0071e3;
+    background: #1d1d1f !important;
     padding: 12px 26px;
     border-radius: 30px;
     letter-spacing: -0.01em;
@@ -272,7 +272,7 @@ section.first {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    background: #0077ed;
+    background: #333336 !important;
     color: #ffffff;
 }
 

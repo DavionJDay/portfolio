@@ -538,16 +538,16 @@ footer .footer-below {
     box-shadow: none !important;
 }
 
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
-.portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
+/* Update your hover block to this */
+.modal-view-button:hover,
+.modal-view-button:focus,
+.modal-view-button:active {
     background-color: #333336 !important;
-    background-image: none !important;
-    color: #ffffff !important;
+    color: #ffffff !important; /* Forces the text to stay white */
     border-color: #333336 !important;
-    opacity: 1 !important;
+    text-decoration: none !important; /* Kills any underline */
     outline: 0 !important;
-    box-shadow: none !important;
+    opacity: 1 !important; /* Ensures it doesn't fade to 0.7 like standard links */
 }
 
 /* ==========================================================================

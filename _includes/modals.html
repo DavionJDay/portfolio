@@ -1,36 +1,37 @@
 <style>
   .portfolio-direct-link {
-      /* Reset everything */
-      position: relative !important;
-      z-index: 10 !important;
+      /* Force display and block structure */
       display: inline-block !important;
       
-      /* Colors */
+      /* Essential background and color */
       background-color: #1d1d1f !important;
+      background-clip: padding-box !important; /* Ensures the color fills the box correctly */
       color: #ffffff !important;
       
-      /* Reset Bootstrap artifacts */
+      /* Reset all potential Bootstrap interferences */
+      background-image: none !important;
       border: none !important;
       box-shadow: none !important;
-      background-image: none !important;
       outline: none !important;
       
-      /* Padding/Sizing */
+      /* Shape and spacing */
       border-radius: 30px !important;
       padding: 12px 26px !important;
-      font-weight: 500 !important;
       text-decoration: none !important;
+      
+      /* Force visibility */
+      opacity: 1 !important;
+      visibility: visible !important;
+      filter: none !important;
+      transition: background-color 0.3s ease !important;
   }
 
+  /* Hover State */
   .portfolio-direct-link:hover {
-      /* Force the color */
-      background-color: #333336 !important;
-      background-image: none !important;
+      background-color: #333336 !important; /* Charcoal Gray */
       color: #ffffff !important;
-      
-      /* Kill overlays */
-      box-shadow: none !important;
       opacity: 1 !important;
+      box-shadow: none !important;
   }
 </style>
 

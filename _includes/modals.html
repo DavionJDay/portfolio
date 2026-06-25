@@ -1,5 +1,4 @@
 <style>
-/* Base Style */
   .portfolio-direct-link {
       display: inline-block !important;
       background-color: #1d1d1f !important;
@@ -10,16 +9,20 @@
       font-weight: 500 !important;
       font-size: 14px !important;
       text-decoration: none !important;
-      transition: background-color 0.3s ease !important; /* Only animate color */
+      cursor: pointer !important;
+      
+      /* The vital overrides */
       opacity: 1 !important;
+      filter: none !important;
+      transition: background-color 0.3s ease, opacity 0s !important;
+      -webkit-transition: background-color 0.3s ease, opacity 0s !important;
   }
 
-  /* Force the Hover Color independently */
   .portfolio-direct-link:hover {
-      background-color: #333336 !important; /* This is your charcoal gray */
+      background-color: #333336 !important;
       color: #ffffff !important;
       opacity: 1 !important;
-      text-decoration: none !important;
+      filter: none !important;
   }
 </style>
 

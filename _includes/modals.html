@@ -1,4 +1,5 @@
 <style>
+  /* Base Style: Force solid opacity and disable all transitions on the link */
   .portfolio-direct-link {
       display: inline-block !important;
       background-color: #1d1d1f !important;
@@ -11,18 +12,22 @@
       text-decoration: none !important;
       cursor: pointer !important;
       
-      /* The vital overrides */
+      /* The vital overrides to stop the fade */
       opacity: 1 !important;
       filter: none !important;
       transition: background-color 0.3s ease, opacity 0s !important;
       -webkit-transition: background-color 0.3s ease, opacity 0s !important;
   }
 
-  .portfolio-direct-link:hover {
+  /* Hover State: Force the charcoal color and prevent any fade/opacity shift */
+  .portfolio-direct-link:hover,
+  .portfolio-direct-link:focus,
+  .portfolio-direct-link:active {
       background-color: #333336 !important;
       color: #ffffff !important;
       opacity: 1 !important;
       filter: none !important;
+      text-decoration: none !important;
   }
 </style>
 
@@ -46,11 +51,12 @@
             <p>{{ post.description }}</p>
             {% endif %}
             
-           <a href="{{ post.project-url }}" 
-   target="_blank" 
-   class="portfolio-direct-link" 
-   style="opacity: 1 !important;">
-                View Project
+            {% if post.project-url != null %}
+              <a href="{{ post.project-url }}" 
+                 target="_blank" 
+                 class="portfolio-direct-link" 
+                 style="opacity: 1 !important;">
+                 View Project
               </a>
             {% endif %}
 

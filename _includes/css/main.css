@@ -2,7 +2,8 @@
  * Start Bootstrap - Freelancer Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- * * Production-Ready Apple Premium Refactor for Davion Day Portfolio
+ * 
+ * Production-Ready Apple Premium Refactor for Davion Day Portfolio
  */
 
 /* ==========================================================================
@@ -435,35 +436,45 @@ footer .footer-below {
     border-radius: 8px !important;
 }
 
+/* Premium iOS-Style Responsive Close Target Corner Button */
 .portfolio-modal .close-modal {
     position: absolute;
-    top: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
+    top: 20px;
+    right: 20px;
+    width: 44px; /* Perfect square touch target */
+    height: 44px;
+    background-color: #f5f5f7; /* Apple light gray circular background */
+    border-radius: 50%;
     cursor: pointer;
+    z-index: 1060; /* Forces it to the absolute top layer above all content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .portfolio-modal .close-modal:hover {
-    opacity: .5;
+    background-color: #e5e5ea; /* Darkens slightly on hover/tap */
+    opacity: 1;
 }
 
+/* Precision centered lines for the 'X' */
 .portfolio-modal .close-modal .lr {
-    z-index: 1051;
-    width: 1px;
-    height: 50px;
-    margin-left: 25px;
-    background-color: #d2d2d7;
+    z-index: 1061;
+    width: 2px;
+    height: 18px;
+    background-color: #1d1d1f;
     transform: rotate(45deg);
+    position: absolute;
 }
 
 .portfolio-modal .close-modal .lr .rl {
-    z-index: 1052;
-    width: 1px;
-    height: 50px;
-    background-color: #d2d2d7;
+    z-index: 1062;
+    width: 2px;
+    height: 18px;
+    background-color: #1d1d1f;
     transform: rotate(90deg);
+    position: absolute;
 }
 
 .navbar-nav>.active>a {
@@ -475,7 +486,7 @@ footer .footer-below {
     transform: translateZ(0);
 }
 
-/* Premium Flawless Circular Headshot Refactor */
+/* Premium Flawless Circular Headshot Style */
 .header-image {
     display: block;
     max-width: 18%;
@@ -495,6 +506,7 @@ footer .footer-below {
     border-radius: 18px;
 }
 
+/* Core Navigation Action Button */
 .resume-button {
     background: #1d1d1f;
     color: #ffffff;
@@ -508,9 +520,45 @@ footer .footer-below {
     color: #ffffff;
 }
 
+/* Premium Pill-Shaped Modal Action Link Buttons */
 .modal-view-button {
+    display: inline-block;
     background-color: #1d1d1f;
-    border-radius: 6px;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    transition: background 0.2s ease;
+    text-decoration: none;
+}
+
+.modal-view-button:hover {
+    background-color: #333336;
+    opacity: 1; /* Overrides global link hover opacity change */
+}
+
+/* Styled for the secondary "Close" button at the bottom of the modal content layout */
+.modal-close-button {
+    display: inline-block;
+    background-color: #f5f5f7;
+    color: #1d1d1f !important;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    transition: background 0.2s ease;
+    text-decoration: none;
+    margin-left: 10px; /* Clean tracking spacing between neighboring buttons */
+}
+
+.modal-close-button:hover {
+    background-color: #e5e5ea;
+    opacity: 1;
 }
 
 /* ==========================================================================

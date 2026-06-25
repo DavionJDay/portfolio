@@ -8,7 +8,7 @@
 
 /* ==========================================================================
    1. Core Base Styles
-   ========================================================================== */
+   ========================================================================= */
 body {
     overflow-x: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -211,7 +211,7 @@ section.first {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 280px; /* Optimized down from 350px for elegant, proportional mobile sizing */
+    max-width: 280px;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
@@ -375,7 +375,7 @@ footer .footer-below {
 }
 
 /* ==========================================================================
-   9. Modals & Scroll Interface Component
+   9. Modals & Scroll Interface Component (Ultra-Specificity Update)
    ========================================================================== */
 .scroll-top {
     z-index: 1049;
@@ -405,13 +405,12 @@ footer .footer-below {
     background-color: #ffffff;
 }
 
-/* Forces a fixed, instant bottom gap on mobile without needing to scroll */
 @media (max-width: 767px) {
     .portfolio-modal {
-        bottom: 60px !important; /* Instantly lifts the entire window up by 60px */
+        bottom: 60px !important;
     }
     .portfolio-modal .modal-content {
-        padding: 40px 0; /* Slightly streamlined padding for better mobile viewing */
+        padding: 40px 0;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -436,17 +435,16 @@ footer .footer-below {
     border-radius: 8px !important;
 }
 
-/* Premium iOS-Style Responsive Close Target Corner Button */
 .portfolio-modal .close-modal {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 44px; /* Perfect square touch target */
+    width: 44px;
     height: 44px;
-    background-color: #f5f5f7; /* Apple light gray circular background */
+    background-color: #f5f5f7;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1060; /* Forces it to the absolute top layer above all content */
+    z-index: 1060;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -454,11 +452,10 @@ footer .footer-below {
 }
 
 .portfolio-modal .close-modal:hover {
-    background-color: #e5e5ea; /* Darkens slightly on hover/tap */
+    background-color: #e5e5ea;
     opacity: 1;
 }
 
-/* Precision centered lines for the 'X' */
 .portfolio-modal .close-modal .lr {
     z-index: 1061;
     width: 2px;
@@ -486,7 +483,6 @@ footer .footer-below {
     transform: translateZ(0);
 }
 
-/* Premium Flawless Circular Headshot Style */
 .header-image {
     display: block;
     max-width: 18%;
@@ -506,7 +502,6 @@ footer .footer-below {
     border-radius: 18px;
 }
 
-/* Core Navigation Action Button */
 .resume-button {
     background: #1d1d1f;
     color: #ffffff;
@@ -520,27 +515,33 @@ footer .footer-below {
     color: #ffffff;
 }
 
-/* Premium Pill-Shaped Modal Action Link Buttons */
-.modal-view-button {
-    display: inline-block;
+/* Premium Pill-Shaped Modal Action Link Buttons - High Specificity Block */
+.portfolio-modal .modal-content .btn.btn-default.modal-view-button {
+    display: inline-block !important;
     background-color: #1d1d1f !important;
+    background-image: none !important;
     color: #ffffff !important;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 24px;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    transition: background 0.2s ease, color 0.2s ease;
-    text-decoration: none;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    letter-spacing: -0.01em !important;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
 }
 
-.modal-view-button:hover,
-.modal-view-button:focus,
-.modal-view-button:active {
+.portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
+.portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
+.portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
     background-color: #333336 !important;
+    background-image: none !important;
     color: #ffffff !important;
-    opacity: 1; /* Overrides global link hover opacity change */
+    border-color: #333336 !important;
+    opacity: 1 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 /* ==========================================================================
@@ -568,7 +569,6 @@ footer .footer-below {
         font-size: 2em;
     }
     
-    /* Keeps the profile photo compact, premium, and crisp like the mobile layout */
     header .header-image {
         max-width: 130px;
     }
@@ -594,6 +594,6 @@ footer .footer-below {
     }
     
     #portfolio .portfolio-item .portfolio-link {
-        max-width: 350px; /* Restores the perfect desktop size you love */
+        max-width: 350px;
     }
 }

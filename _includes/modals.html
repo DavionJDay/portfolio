@@ -1,4 +1,34 @@
-<!-- Portfolio Modals -->
+<style>
+  /* Premium Pill-Shaped Modal Action Link Buttons - Inline Override Hook */
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button {
+      display: inline-block !important;
+      background-color: #1d1d1f !important;
+      background-image: none !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 30px !important;
+      padding: 10px 24px !important;
+      font-weight: 500 !important;
+      font-size: 14px !important;
+      letter-spacing: -0.01em !important;
+      transition: background-color 0.2s ease, color 0.2s ease !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+  }
+
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:hover,
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:focus,
+  .portfolio-modal .modal-content .btn.btn-default.modal-view-button:active {
+      background-color: #333336 !important;
+      background-image: none !important;
+      color: #ffffff !important;
+      border-color: #333336 !important;
+      opacity: 1 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+  }
+</style>
+
 {% for post in site.posts %}
 <div class="portfolio-modal modal fade" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-content">

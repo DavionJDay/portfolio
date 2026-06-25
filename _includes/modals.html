@@ -1,79 +1,86 @@
 <style>
-/* Base Style */
-  .portfolio-direct-link {
-      display: inline-block !important;
-      background-color: #1d1d1f !important;
-      color: #ffffff !important;
-      border: none !important;
-      border-radius: 30px !important;
-      padding: 12px 26px !important;
-      font-weight: 500 !important;
-      font-size: 14px !important;
-      text-decoration: none !important;
-      transition: background-color 0.3s ease !important; /* Only animate color */
-      opacity: 1 !important;
-  }
+  /* Base Style: Force solid opacity and disable all transitions on the link */
+  .portfolio-direct-link {
+      display: inline-block !important;
+      background-color: #1d1d1f !important;
+      color: #ffffff !important;
+      border: none !important;
+      border-radius: 30px !important;
+      padding: 12px 26px !important;
+      font-weight: 500 !important;
+      font-size: 14px !important;
+      text-decoration: none !important;
+      cursor: pointer !important;
+      
+      /* The vital overrides to stop the fade */
+      opacity: 1 !important;
+      filter: none !important;
+      transition: background-color 0.3s ease, opacity 0s !important;
+      -webkit-transition: background-color 0.3s ease, opacity 0s !important;
+  }
 
-  /* Force the Hover Color independently */
-  .portfolio-direct-link:hover {
-      background-color: #333336 !important; /* This is your charcoal gray */
-      color: #ffffff !important;
-      opacity: 1 !important;
-      text-decoration: none !important;
-  }
+  /* Hover State: Force the charcoal color and prevent any fade/opacity shift */
+  .portfolio-direct-link:hover,
+  .portfolio-direct-link:focus,
+  .portfolio-direct-link:active {
+      background-color: #333336 !important;
+      color: #ffffff !important;
+      opacity: 1 !important;
+      filter: none !important;
+      text-decoration: none !important;
+  }
 </style>
 
 {% for post in site.posts %}
 <div class="portfolio-modal modal" id="portfolioModal-{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-content">
-    <div class="close-modal" data-dismiss="modal">
-      <div class="lr">
-        <div class="rl">
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="modal-body">
-            <h2>{{ post.title }}</h2>
-            <hr class="star-primary">
-            <img src="img/portfolio/{{ post.img }}" class="portfolio-image" alt="{{ post.alt }}">
-            {% if post.description %}
-            <p>{{ post.description }}</p>
-            {% endif %}
-            
-            {% if post.project-url != null %}
-  <a href="{{ post.project-url }}" 
-     target="_blank" 
-     class="portfolio-direct-link" 
-     onmouseover="this.style.backgroundColor='#333336'" 
-     onmouseout="this.style.backgroundColor='#1d1d1f'">
-                View Project
-              </a>
-            {% endif %}
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <h2>{{ post.title }}</h2>
+            <hr class="star-primary">
+            <img src="img/portfolio/{{ post.img }}" class="portfolio-image" alt="{{ post.alt }}">
+            {% if post.description %}
+            <p>{{ post.description }}</p>
+            {% endif %}
+            
+            {% if post.project-url != null %}
+              <a href="{{ post.project-url }}" 
+                 target="_blank" 
+                 class="portfolio-direct-link" 
+                 style="opacity: 1 !important;">
+                 View Project
+              </a>
+            {% endif %}
 
-            <ul class="list-inline item-details">
-              {% if post.client %}
-              <li>Client:
-                <strong>{{ post.client }}</strong>
-              </li>
-              {% endif %}
-              {% if post.project-date %}
-              <li>Date:
-                <strong>{{ post.project-date }}</strong>
-              </li>
-              {% endif %}
-              {% if post.category %}
-              <li>Service:
-                <strong>{{ post.category }}</strong>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            <ul class="list-inline item-details">
+              {% if post.client %}
+              <li>Client:
+                <strong>{{ post.client }}</strong>
+              </li>
+              {% endif %}
+              {% if post.project-date %}
+              <li>Date:
+                <strong>{{ post.project-date }}</strong>
+              </li>
+              {% endif %}
+              {% if post.category %}
+              <li>Service:
+                <strong>{{ post.category }}</strong>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endfor %}

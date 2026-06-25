@@ -1,5 +1,5 @@
 <style>
-  /* Completely isolated custom class to bypass Bootstrap entirely */
+/* Completely isolated custom class to bypass Bootstrap entirely */
   .portfolio-direct-link {
       display: inline-block !important;
       background-color: #1d1d1f !important;
@@ -26,8 +26,14 @@
       background-image: none !important;
       color: #ffffff !important;
       text-decoration: none !important;
-      opacity: 1 !important;
+      opacity: 1 !important; /* Forces the button to stay fully solid */
       outline: 0 !important;
+  }
+
+  /* ADD THIS SPECIFIC OVERRIDE TO KILL THE GLOBAL LINK FADE */
+  a.portfolio-direct-link:hover {
+      opacity: 1 !important;
+      filter: none !important;
   }
 </style>
 

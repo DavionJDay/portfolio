@@ -211,7 +211,7 @@ section.first {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 350px; 
+    max-width: 280px; /* Optimized down from 350px for elegant, proportional mobile sizing */
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
@@ -544,5 +544,9 @@ footer .footer-below {
 
     #portfolio .portfolio-item {
         margin: 0 0 40px;
+    }
+    
+    #portfolio .portfolio-item .portfolio-link {
+        max-width: 350px; /* Restores the perfect desktop size you love */
     }
 }

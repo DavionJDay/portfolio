@@ -523,7 +523,7 @@ footer .footer-below {
 /* Premium Pill-Shaped Modal Action Link Buttons */
 .modal-view-button {
     display: inline-block;
-    background-color: #1d1d1f;
+    background-color: #1d1d1f !important;
     color: #ffffff !important;
     border: none;
     border-radius: 30px;
@@ -531,12 +531,15 @@ footer .footer-below {
     font-weight: 500;
     font-size: 14px;
     letter-spacing: -0.01em;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
     text-decoration: none;
 }
 
-.modal-view-button:hover {
-    background-color: #333336;
+.modal-view-button:hover,
+.modal-view-button:focus,
+.modal-view-button:active {
+    background-color: #333336 !important;
+    color: #ffffff !important;
     opacity: 1; /* Overrides global link hover opacity change */
 }
 

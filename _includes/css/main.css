@@ -1,587 +1,154 @@
 ---
 ---
-/*!
- * Start Bootstrap - Freelancer (Refactored for Apple-Premium Aesthetic)
- * Marries the exact structural layout of your original site with elite visual polish.
- */
-
 /* ==========================================================================
-   1. Premium Variable System & Color Profiles
+   1. GLOBAL RESET & BASELINE
    ========================================================================== */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 :root {
-    /* Hardcoded high-contrast color fallbacks */
-    --accent-color: #0066cc;
-    --bg-secondary-light: #f5f5f7;
-    --text-dark-core: #1d1d1f;
-    
-    /* Light Mode Interface Matrix */
+    --accent: #0066cc;
     --bg-primary: #ffffff;
-    --bg-secondary: var(--bg-secondary-light);
-    --bg-glass: rgba(255, 255, 255, 0.80);
-    --bg-glass-heavy: rgba(255, 255, 255, 0.96);
-    
-    --text-primary: var(--text-dark-core);
+    --bg-secondary: #f5f5f7;
+    --text-primary: #1d1d1f;
     --text-secondary: #6e6e73;
-    --text-tertiary: #86868b;
-    
-    --btn-primary-bg: var(--text-dark-core);
-    --btn-primary-hover: #2d2d30;
-    --btn-text: #ffffff;
-    
-    --border-light: #e5e5ea;
-    --border-medium: #d2d2d7;
-    
-    --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.08);
-    --focus-ring: rgba(0, 102, 204, 0.25);
-    
-    /* Apple-Standard Inertial Curve */
-    --motion-curve: cubic-bezier(0.25, 1, 0.5, 1);
+    --border: #d2d2d7;
+    --glass: rgba(255, 255, 255, 0.85);
+    --motion: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Softened Dark Mode Matrix (Eliminates Halation) */
-        --bg-primary: #0e0e10; 
-        --bg-secondary: #1c1c1e;
-        --bg-glass: rgba(14, 14, 16, 0.80);
-        --bg-glass-heavy: rgba(14, 14, 16, 0.96);
-        
+        --bg-primary: #0a0a0c;
+        --bg-secondary: #161618;
         --text-primary: #f5f5f7;
         --text-secondary: #a1a1a6;
-        --text-tertiary: #86868b;
-        
-        --accent-color: #2997ff;
-        --btn-primary-bg: #f5f5f7;
-        --btn-primary-hover: #ffffff;
-        --btn-text: #1d1d1f;
-        
-        --border-light: #2c2c2e;
-        --border-medium: #3a3a3c;
-        
-        --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.3);
-        --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.5);
-        --focus-ring: rgba(41, 151, 255, 0.35);
+        --border: #3a3a3c;
+        --glass: rgba(10, 10, 12, 0.85);
     }
 }
 
-/* Custom Text Highlight Overrides */
-::selection { background: var(--focus-ring); color: var(--text-primary); }
-::-moz-selection { background: var(--focus-ring); color: var(--text-primary); }
-
-/* ==========================================================================
-   2. Core Architecture & Typographic Layout
-   ========================================================================== */
 body {
-    overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.4s var(--motion-curve), color 0.4s var(--motion-curve);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    -webkit-user-drag: none;
-}
-
-/* System-Level Focus Indicator Overrides */
-a:focus-visible,
-.btn:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: none !important;
-    box-shadow: 0 0 0 4px var(--focus-ring) !important;
-    transition: box-shadow 0.2s var(--motion-curve);
-}
-
-p {
-    font-size: 17px;
-    line-height: 1.52942;
-    font-weight: 400;
-    letter-spacing: -0.011em;
-    color: var(--text-secondary);
-    max-width: 72ch; /* Premium Reading Length Metric */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-p.small {
-    font-size: 14px;
-    line-height: 1.42859;
-    color: var(--text-tertiary);
-}
-
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: opacity 0.2s var(--motion-curve), color 0.2s var(--motion-curve);
-}
-a:hover, a:focus {
-    text-decoration: none;
-    opacity: 0.75;
-}
-a:active, a.active {
-    outline: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-transform: none;
-    font-family: inherit;
-    font-weight: 600;
-    color: var(--text-primary);
-    letter-spacing: -0.022em;
 }
 
 /* ==========================================================================
-   3. Visual Polish: Separators & Utilities
+   2. NAVBAR & HEADER (RESTORED ORIGINAL BREAKPOINTS)
    ========================================================================== */
-hr.star-light, hr.star-primary {
-    margin: 35px auto;
-    padding: 0;
-    max-width: 100%;
-    width: 64px;
-    border: 0;
-    border-top: solid 2px var(--border-medium);
-    text-align: center;
+.navbar-fixed-top {
+    padding: 25px 0;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    transition: all 0.35s var(--motion);
+    border-bottom: 1px solid var(--border);
 }
 
-hr.star-light:after, hr.star-primary:after {
-    content: none !important; /* Strips older icon configurations safely */
-}
+.navbar-fixed-top.navbar-shrink { padding: 10px 0; }
 
-.img-centered { margin: 0 auto; }
-
-/* ==========================================================================
-   4. Framework Layout: Fixed Navigation System
-   ========================================================================== */
-.navbar {
-    text-transform: none;
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 14px;
-    border: 0;
-    background: var(--bg-primary);
-    transition: background 0.3s var(--motion-curve), padding 0.3s var(--motion-curve);
-}
-
-.navbar-brand, .navbar-nav > li > a {
-    color: var(--text-primary) !important;
-    font-weight: 600;
-    transition: color 0.2s var(--motion-curve);
-}
-
-.navbar-brand:hover, .navbar-nav > li > a:hover {
-    color: var(--accent-color) !important;
-}
-
-/* High Contrast Framework State Recovery */
-.navbar-nav > .active > a {
-    background-color: var(--bg-secondary) !important;
-    color: var(--accent-color) !important;
-    border-radius: 8px;
-}
-
-.navbar-toggle {
-    border-color: var(--border-medium) !important;
-    background-color: transparent !important;
-}
-
-.navbar-toggle .icon-bar {
-    background-color: var(--text-primary) !important;
-}
-
-/* Desktop Navigation Alignment */
-@media(min-width: 768px) {
-    .navbar-fixed-top {
-        padding: 18px 0;
-        background: var(--bg-glass) !important;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-light);
-    }
-
-    .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
-        background: var(--bg-glass-heavy) !important;
-    }
-}
-
-/* ==========================================================================
-   5. Main Profile Header & Section Containers
-   ========================================================================== */
 header {
     text-align: center;
     background: var(--bg-primary);
 }
 
-header .container {
-    padding-top: clamp(130px, 14vw, 180px);
-    padding-bottom: clamp(70px, 9vw, 110px);
-}
-
 .header-image {
-    display: block;
-    margin: 0 auto 25px;
-    width: clamp(110px, 15vw, 140px);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    box-shadow: var(--shadow-sm);
-}
-
-header .intro-text .name {
+    margin: 0 auto 30px;
     display: block;
-    text-transform: none;
-    font-size: clamp(2.6em, 5vw, 4.4em);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.15;
 }
 
-header .intro-text .skills {
-    font-size: clamp(1.3em, 2.5vw, 1.8em);
-    font-weight: 400;
-    color: var(--text-secondary);
-    margin-top: 12px;
-    letter-spacing: -0.015em;
-}
-
-section { padding: clamp(70px, 8vw, 110px) 0; }
-
-/* Structural Fix: Matches Original Fixed Navbar Footprint */
-section.first { padding-top: clamp(110px, 12vw, 150px); }
-
-section h2 {
-    margin: 0 0 10px;
-    font-size: clamp(2.2em, 4vw, 3em);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-}
-
-section.success {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
-    border-bottom: 1px solid var(--border-light);
+@media(min-width: 768px) {
+    .header-image { width: 220px; height: 220px; }
 }
 
 /* ==========================================================================
-   6. Portfolio Components & Display Grid Mechanics
+   3. PORTFOLIO GRID (FULL RESPONSIVE SUPPORT)
    ========================================================================== */
-#portfolio * { z-index: 2; }
-
-/* Preserves original layout scaffolding cleanly without column breakage */
-#portfolio .portfolio-item {
+.portfolio-item {
     margin: 0 0 30px;
-    right: 0;
 }
 
-#portfolio .portfolio-item .portfolio-link {
+.portfolio-link {
     display: block;
     position: relative;
+    max-width: 400px;
     margin: 0 auto;
-    max-width: 360px;
-    border-radius: 14px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    background: var(--bg-secondary);
-    will-change: transform, box-shadow;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    transition: transform 0.4s var(--motion-curve), box-shadow 0.4s var(--motion-curve);
+    transition: transform 0.4s var(--motion);
 }
 
-#portfolio .portfolio-item .portfolio-link:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-}
-
-#portfolio .portfolio-item .portfolio-link .caption {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: var(--bg-glass-heavy);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    transition: opacity 0.35s var(--motion-curve);
-}
-
-#portfolio .portfolio-item .portfolio-link .caption:hover { opacity: 1; }
-
-#portfolio .portfolio-item .portfolio-link .caption .caption-content {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-primary);
-    padding: 0 20px;
+.portfolio-link:hover {
+    transform: translateY(-8px);
 }
 
 /* ==========================================================================
-   7. Form Modules & Input Fields
+   4. MODALS (PREMIUM OVERRIDES)
    ========================================================================== */
-.floating-label-form-group {
-    position: relative;
-    margin-bottom: 15px;
-    padding-bottom: .5em;
-    border-bottom: 1px solid var(--border-medium);
-}
-
-.floating-label-form-group input,
-.floating-label-form-group textarea {
-    z-index: 1;
-    position: relative;
-    padding: 5px 0;
-    border: 0;
-    font-size: 1.2em;
-    background: transparent;
-    color: var(--text-primary);
-    box-shadow: none !important;
-    resize: none;
-    width: 100%;
-}
-
-/* ==========================================================================
-   8. Specific Framework Overrides (Button Elements)
-   ========================================================================== */
-.btn-outline, .resume-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--btn-text) !important;
-    background: var(--btn-primary-bg) !important;
-    padding: 12px 26px;
-    border-radius: 30px;
-    letter-spacing: -0.01em;
-    transition: background 0.2s ease, transform 0.15s var(--motion-curve);
-    cursor: pointer;
-}
-.btn-outline:hover, .resume-button:hover { background: var(--btn-primary-hover) !important; }
-.btn-outline:active, .resume-button:active { transform: scale(0.97); }
-
-/* Deep Portfolio Modal Window Action Links */
-.portfolio-modal .modal-content .btn.modal-view-button {
-    display: inline-block !important;
-    background-color: var(--btn-primary-bg) !important;
-    background-image: none !important;
-    color: var(--btn-text) !important;
-    border: none !important;
-    border-radius: 30px !important;
-    padding: 10px 24px !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    letter-spacing: -0.01em !important;
-    box-shadow: none !important;
-    transition: background-color 0.2s ease, transform 0.15s var(--motion-curve) !important;
-    text-decoration: none !important;
-}
-.portfolio-modal .modal-content .btn.modal-view-button:hover,
-.portfolio-modal .modal-content .btn.modal-view-button:focus {
-    background-color: var(--btn-primary-hover) !important;
-    color: var(--btn-text) !important;
-    outline: 0 !important;
-}
-.portfolio-modal .modal-content .btn.modal-view-button:active { transform: scale(0.97) !important; }
-
-/* Direct Work Reference Anchor Mapping */
-.portfolio-modal .modal-body a.portfolio-direct-link {
-    display: inline-block !important;
-    background-color: var(--btn-primary-bg) !important;
-    color: var(--btn-text) !important;
-    border: none !important;
-    border-radius: 30px !important;
-    padding: 12px 26px !important;
-    text-decoration: none !important;
-    opacity: 1 !important;
-    transition: background-color 0.2s ease, transform 0.15s var(--motion-curve) !important;
-}
-.portfolio-modal .modal-body a.portfolio-direct-link:hover,
-.portfolio-modal .modal-body a.portfolio-direct-link:focus {
-    background-color: var(--btn-primary-hover) !important;
-    color: var(--btn-text) !important;
-}
-.portfolio-modal .modal-body a.portfolio-direct-link:active { transform: scale(0.97) !important; }
-
-/* ==========================================================================
-   9. Footer Architecture
-   ========================================================================== */
-footer {
-    color: var(--text-tertiary);
-    font-size: 13px;
-}
-
-footer h3 {
-    font-size: 15px;
-    color: var(--text-primary);
-    margin-bottom: 22px;
-}
-
-footer .footer-above {
-    padding-top: 60px;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
-}
-
-footer .footer-col { margin-bottom: 40px; }
-footer .footer-col p { color: var(--text-secondary); }
-
-footer .footer-below {
-    padding: 30px 0;
-    background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-light);
-}
-
-/* Tactical Touch Targets (A11y Compliant) */
-.btn-social {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    font-size: 18px;
-    color: var(--btn-text) !important;
-    background: var(--btn-primary-bg) !important;
-    transition: background 0.2s ease, transform 0.15s var(--motion-curve);
-}
-.btn-social:hover { background: var(--btn-primary-hover) !important; }
-.btn-social:active { transform: scale(0.94); }
-
-/* ==========================================================================
-   10. Modals & Interface Controllers
-   ========================================================================== */
-.modal.fade.in {
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-}
-
-/* Layered Glass Transition Base */
-.modal-backdrop.in {
-    opacity: 0.4;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: #000;
-    transition: opacity 0.3s ease;
-}
-
-.scroll-top {
-    z-index: 1049;
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
-}
-.scroll-top .btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--bg-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border-medium);
-    color: var(--text-primary);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.15s var(--motion-curve);
-}
-.scroll-top .btn:active { transform: scale(0.94); }
-
 .portfolio-modal .modal-content {
-    padding: 70px 0;
-    background-color: var(--bg-primary);
+    padding: 80px 0;
     min-height: 100vh;
     border: none;
-    box-shadow: none;
+    border-radius: 0;
+    background-clip: padding-box;
 }
 
-@media (max-width: 767px) {
-    .portfolio-modal { bottom: 0 !important; }
-    .portfolio-modal .modal-content {
-        padding: 40px 0;
-    }
-}
-
-.portfolio-modal .modal-content h2 {
-    font-size: 2.4em;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.portfolio-modal .modal-content img { margin-bottom: 25px; }
-.portfolio-modal .modal-content .item-details { margin: 20px 0; }
-
-/* Structural Restoration: Keeps Layout Context Constrained */
 .portfolio-image {
-    display: block;
-    max-width: 35%; 
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 14px;
-    box-shadow: var(--shadow-sm);
+    max-width: 80%;
+    margin: 0 auto 30px;
+    border-radius: 12px;
 }
 
-@media (max-width: 991px) {
-    .portfolio-image { max-width: 60%; }
-}
-@media (max-width: 767px) {
-    .portfolio-image { max-width: 85%; }
+@media(min-width: 992px) {
+    .portfolio-image { max-width: 40%; }
 }
 
-/* CSS-Engine Driven Premium Close Controller Box */
 .portfolio-modal .close-modal {
-    position: absolute;
-    top: 25px;
-    right: 25px;
     width: 44px;
     height: 44px;
-    background-color: var(--bg-secondary);
+    background: var(--bg-secondary);
     border-radius: 50%;
-    cursor: pointer;
-    z-index: 1060;
-    transition: background-color 0.2s ease, transform 0.15s var(--motion-curve);
-}
-.portfolio-modal .close-modal:hover { background-color: var(--border-medium); }
-.portfolio-modal .close-modal:active { transform: scale(0.94); }
-
-.portfolio-modal .close-modal::before,
-.portfolio-modal .close-modal::after {
-    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2px;
-    height: 16px;
-    background-color: var(--text-primary);
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    transition: 0.2s var(--motion);
 }
-.portfolio-modal .close-modal::before { transform: translate(-50%, -50%) rotate(45deg); }
-.portfolio-modal .close-modal::after { transform: translate(-50%, -50%) rotate(-45deg); }
 
 /* ==========================================================================
-   11. Media Environment Query: Print Architecture
+   5. BUTTONS & UTILITIES (FULL BOOTSTRAP INTEGRATION)
+   ========================================================================== */
+.btn-outline, .btn-primary {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: transform 0.15s var(--motion);
+    border: none;
+}
+
+.btn-outline:active, .btn-primary:active { transform: scale(0.96); }
+
+/* Necessary for standard Bootstrap Grid */
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================================================
+   6. PRINT MEDIA (CLEAN OUTPUT)
    ========================================================================== */
 @media print {
-    :root {
-        --bg-primary: #ffffff !important;
-        --text-primary: #000000 !important;
-        --text-secondary: #2c2c2e !important;
-        --bg-secondary: #ffffff !important;
-    }
-    
-    body { background: #ffffff !important; color: #000000 !important; }
-    .navbar, footer, .btn-social, .scroll-top, .btn-outline, .close-modal { display: none !important; }
-    section { padding: 15px 0 !important; }
-    #portfolio .portfolio-item .portfolio-link { box-shadow: none !important; border: 1px solid #d2d2d7 !important; }
+    .navbar, .btn, .scroll-top { display: none !important; }
 }

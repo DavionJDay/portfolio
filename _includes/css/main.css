@@ -1,23 +1,29 @@
-/* ==========================================================================
-   Start Bootstrap - Freelancer (Refactored for Apple-Premium Aesthetic)
-   ========================================================================== */
+---
+---
+/*!
+ * Start Bootstrap - Freelancer (Refactored for Apple-Premium Aesthetic)
+ * Optimized for Liquid Variables, Fluid Typography, and Accessibility.
+ */
 
 /* ==========================================================================
-   1. Global CSS Variables & Native Dark Mode
+   1. Global CSS Variables & Dynamic Jekyll Integration
    ========================================================================== */
 :root {
-    /* Light Mode Palette (Default) */
+    /* Maps your Jekyll config colors to CSS variables, with fallbacks */
+    --accent-color: #{{ site.color.primary | default: '0066cc' }};
+    --bg-secondary: #{{ site.color.secondary | default: 'f5f5f7' }};
+    --text-primary-dark: #{{ site.color.secondary-dark | default: '1d1d1f' }};
+    
+    /* Light Mode Palette */
     --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f7;
     --bg-glass: rgba(255, 255, 255, 0.85);
     --bg-glass-heavy: rgba(255, 255, 255, 0.95);
     
-    --text-primary: #1d1d1f;
+    --text-primary: var(--text-primary-dark);
     --text-secondary: #6e6e73;
     --text-tertiary: #86868b;
     
-    --accent-color: #0066cc;
-    --btn-primary-bg: #1d1d1f;
+    --btn-primary-bg: var(--text-primary-dark);
     --btn-primary-hover: #333336;
     --btn-text: #ffffff;
     
@@ -31,23 +37,23 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Dark Mode Palette */
-        --bg-primary: #000000; /* True OLED Black */
-        --bg-secondary: #1c1c1e;
-        --bg-glass: rgba(28, 28, 30, 0.85);
-        --bg-glass-heavy: rgba(28, 28, 30, 0.95);
+        /* Premium Dark Mode Palette (Avoids True Black Halation) */
+        --bg-primary: #0a0a0c; 
+        --bg-secondary: #141415;
+        --bg-glass: rgba(10, 10, 12, 0.85);
+        --bg-glass-heavy: rgba(10, 10, 12, 0.95);
         
         --text-primary: #f5f5f7;
         --text-secondary: #a1a1a6;
         --text-tertiary: #86868b;
         
-        --accent-color: #2997ff; /* Brighter blue for dark contrast */
+        --accent-color: #2997ff;
         --btn-primary-bg: #f5f5f7;
         --btn-primary-hover: #ffffff;
         --btn-text: #1d1d1f;
         
-        --border-light: #38383a;
-        --border-medium: #48484a;
+        --border-light: #2c2c2e;
+        --border-medium: #3a3a3c;
         
         --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.4);
         --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.6);
@@ -109,22 +115,21 @@ a:hover { opacity: 0.7; }
 
 h1, h2, h3, h4, h5, h6 {
     text-transform: none;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    font-family: inherit;
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: -0.022em;
 }
 
 /* ==========================================================================
-   3. Dividers & Utilities
+   3. Utilities & Dividers
    ========================================================================== */
 hr.star-light, hr.star-primary {
     margin: 40px auto;
     padding: 0;
-    max-width: 100%;
-    width: 80px;
+    width: 60px; /* Thinner, more elegant divider */
     border: 0;
-    border-top: solid 1px var(--border-medium);
+    border-top: solid 2px var(--border-medium);
     text-align: center;
 }
 
@@ -132,8 +137,10 @@ hr.star-light:after, hr.star-primary:after {
     content: none !important;
 }
 
+.img-centered { margin: 0 auto; }
+
 /* ==========================================================================
-   4. Header Component
+   4. Header Component (Fluid Typography Restored Image Logic)
    ========================================================================== */
 header {
     text-align: center;
@@ -141,25 +148,30 @@ header {
 }
 
 header .container {
-    padding-top: 140px;
-    padding-bottom: 80px;
+    padding-top: clamp(100px, 15vw, 200px);
+    padding-bottom: clamp(60px, 10vw, 120px);
 }
 
-header img {
+.header-image {
     display: block;
     margin: 0 auto 30px;
+    width: clamp(100px, 20vw, 150px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
 }
 
 header .intro-text .name {
     display: block;
-    font-size: 3em;
+    font-size: clamp(2.5rem, 6vw, 5rem); /* Fluid scaling */
     font-weight: 700;
     letter-spacing: -0.025em;
     line-height: 1.1;
 }
 
 header .intro-text .skills {
-    font-size: 1.5em;
+    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Fluid scaling */
     font-weight: 400;
     color: var(--text-secondary);
     margin-top: 15px;
@@ -167,52 +179,60 @@ header .intro-text .skills {
 }
 
 /* ==========================================================================
-   5. Navigation Component
+   5. Navigation Component (Cleaned Specificity)
    ========================================================================== */
 .navbar {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: inherit;
     font-weight: 500;
     font-size: 14px;
     border: 0;
     background: var(--bg-primary);
 }
 
-.navbar-default .navbar-brand,
-.navbar-inverse .navbar-brand,
-.navbar-default .navbar-nav > li > a {
+.navbar-brand, .navbar-nav > li > a {
     color: var(--text-primary) !important;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-brand:hover, .navbar-nav > li > a:hover {
     color: var(--accent-color) !important;
 }
 
-.navbar-default .navbar-toggle {
+.navbar-toggle {
     border-color: var(--border-medium) !important;
     background-color: transparent !important;
 }
 
-.navbar-default .navbar-toggle .icon-bar {
+.navbar-toggle .icon-bar {
     background-color: var(--text-primary) !important;
 }
 
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
+.navbar-toggle:hover, .navbar-toggle:focus {
     background-color: var(--bg-secondary) !important;
 }
 
+.navbar-fixed-top {
+    padding: 16px 0;
+    background: var(--bg-glass) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
+    transition: padding 0.3s ease;
+}
+
+.navbar-fixed-top.navbar-shrink {
+    padding: 10px 0;
+}
+
 /* ==========================================================================
-   6. Structural Layout Sections
+   6. Structural Layout & CSS Grid Portfolio
    ========================================================================== */
-section { padding: 60px 0; }
-section.first { padding-top: 60px; }
+section { padding: clamp(60px, 10vw, 120px) 0; }
 
 section h2 {
-    margin: 0;
-    font-size: 2.4em;
+    margin: 0 0 40px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 700;
     letter-spacing: -0.03em;
 }
@@ -223,13 +243,11 @@ section.success {
     border-bottom: 1px solid var(--border-light);
 }
 
-/* ==========================================================================
-   7. Portfolio Grid & Hover Cards
-   ========================================================================== */
 #portfolio .row {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    padding: 0 15px;
 }
 
 #portfolio .portfolio-item { margin: 0; }
@@ -257,6 +275,8 @@ section.success {
     height: 100%;
     opacity: 0;
     background: var(--bg-glass-heavy);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     transition: all ease 0.3s;
 }
 
@@ -266,25 +286,26 @@ section.success {
     position: absolute;
     top: 50%;
     width: 100%;
-    height: 20px;
-    margin-top: -12px;
+    transform: translateY(-50%);
     text-align: center;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
 /* ==========================================================================
-   8. Buttons & Forms
+   7. Premium Interactive Buttons & Forms
    ========================================================================== */
 .btn-outline, .resume-button, a.portfolio-direct-link, .modal-view-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     font-size: 15px;
     font-weight: 500;
     color: var(--btn-text) !important;
     background: var(--btn-primary-bg) !important;
-    padding: 12px 26px;
+    padding: 12px 28px;
     border-radius: 30px;
     letter-spacing: -0.01em;
     transition: background 0.2s ease, transform 0.1s ease;
@@ -293,6 +314,10 @@ section.success {
 
 .btn-outline:hover, .resume-button:hover, a.portfolio-direct-link:hover, .modal-view-button:hover {
     background: var(--btn-primary-hover) !important;
+}
+
+.btn-outline:active, .resume-button:active, a.portfolio-direct-link:active, .modal-view-button:active {
+    transform: scale(0.98); /* Tactile click interaction */
 }
 
 .floating-label-form-group {
@@ -316,15 +341,15 @@ section.success {
 }
 
 /* ==========================================================================
-   9. Footer Components
+   8. Footer Component
    ========================================================================== */
 footer {
     color: var(--text-tertiary);
-    font-size: 12px;
+    font-size: 14px;
 }
 
 footer h3 {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-primary);
     margin-bottom: 20px;
 }
@@ -348,22 +373,27 @@ footer .footer-below {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 44px;
-    height: 44px;
-    border-radius: 100%;
-    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 20px;
     color: var(--btn-text) !important;
     background: var(--btn-primary-bg) !important;
-    transition: background .2s ease;
+    transition: background .2s ease, transform 0.1s ease;
 }
 
-.btn-social:hover {
-    background: var(--btn-primary-hover) !important;
-}
+.btn-social:hover { background: var(--btn-primary-hover) !important; }
+.btn-social:active { transform: scale(0.95); }
 
 /* ==========================================================================
-   10. Modals & UI Controls
+   9. Modals & UI Controls (Restored Fixes)
    ========================================================================== */
+/* Original hardware acceleration fix restored */
+.modal.fade.in {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
 .scroll-top {
     z-index: 1049;
     position: fixed;
@@ -375,9 +405,9 @@ footer .footer-below {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -388,21 +418,20 @@ footer .footer-below {
 .portfolio-modal .modal-content {
     padding: 80px 0;
     background-color: var(--bg-primary);
+    min-height: 100vh;
 }
 
+/* Replaced hacky .lr/.rl HTML with clean CSS pseudo-elements */
 .portfolio-modal .close-modal {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     width: 44px;
     height: 44px;
     background-color: var(--bg-secondary);
     border-radius: 50%;
     cursor: pointer;
     z-index: 1060;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: background-color 0.2s ease;
 }
 
@@ -410,56 +439,51 @@ footer .footer-below {
     background-color: var(--border-medium);
 }
 
-.portfolio-modal .close-modal .lr,
-.portfolio-modal .close-modal .lr .rl {
+.portfolio-modal .close-modal::before,
+.portfolio-modal .close-modal::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 2px;
     height: 18px;
     background-color: var(--text-primary);
-    position: absolute;
 }
-.portfolio-modal .close-modal .lr { transform: rotate(45deg); }
-.portfolio-modal .close-modal .lr .rl { transform: rotate(90deg); }
 
-.portfolio-image {
+.portfolio-modal .close-modal::before { transform: translate(-50%, -50%) rotate(45deg); }
+.portfolio-modal .close-modal::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.portfolio-modal .modal-content .portfolio-image {
     display: block;
     max-width: 100%;
+    width: clamp(280px, 60%, 600px); /* Fluid image constraints */
     height: auto;
     margin: 0 auto 30px;
-    border-radius: 18px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
 }
 
 /* ==========================================================================
-   11. Desktop Breakpoints (>= 768px)
+   10. Print Media Query (For Resumes & Audits)
    ========================================================================== */
-@media(min-width: 768px) {
-    #portfolio .row {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+@media print {
+    :root {
+        --bg-primary: #ffffff !important;
+        --text-primary: #000000 !important;
+        --text-secondary: #333333 !important;
+        --bg-secondary: #ffffff !important;
     }
     
-    section { padding: 120px 0; }
-    section h2 { font-size: 3.2em; }
-    section.first { padding-top: 120px; }
-
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 120px;
+    body { background: #ffffff !important; color: #000000 !important; }
+    
+    .navbar, footer, .btn-social, .scroll-top, .btn-outline {
+        display: none !important;
     }
-    header .intro-text .name { font-size: 5em; }
-    header .intro-text .skills { font-size: 2em; }
-
-    .navbar-fixed-top {
-        padding: 16px 0;
-        background: var(--bg-glass) !important;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-light);
-        transition: padding 0.3s ease;
-    }
-}
-
-@media (min-width: 992px) {
-    #portfolio .row {
-        grid-template-columns: repeat(3, 1fr);
+    
+    section { padding: 20px 0 !important; }
+    
+    #portfolio .portfolio-item .portfolio-link {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
     }
 }

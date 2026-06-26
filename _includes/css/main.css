@@ -1,48 +1,3 @@
-You are absolutely right to challenge that first refactor. While it was a step in the right direction visually, a true top-tier codebase needs to be resilient, scalable, and flawless in its execution.
-
-Looking back at both your original Bootstrap 3/Jekyll code and the updated refactor, I left out some crucial functional hooks, relied on some outdated workarounds, and missed opportunities to push the typography to a true Apple-tier standard.
-
-Here is a rigorous, three-round audit of my previous code, focusing on different architectural layers. At the end, I have combined all of these fixes into **one final, perfected master stylesheet** so you only have to copy and paste once.
-
----
-
-### Round 1: Architecture & Lost Structural Code
-
-*Focusing on Jekyll compatibility, missing legacy fixes, and image handling.*
-
-1. **Weakness: Severed Jekyll Liquid Integration.** In your original code, you used Jekyll tags (like `#{{ site.color.primary }}`) to manage colors from your `_config.yml`. I completely overwrote these with hardcoded CSS variables. If you change a color in your config file now, the site won't update.
-2. **Weakness: Missing Modal Hardware Acceleration.** Your original code contained a specific fix (`.modal.fade.in { transform: translateZ(0); }`) to prevent mouse-wheel scrolling bugs and screen tearing in older browsers when the portfolio modals open. I neglected to carry this over.
-3. **Weakness: Stripped `.header-image` Logic.** In your updated code, you specifically added `aspect-ratio: 1 / 1; object-fit: cover;` to the `.header-image` class. I summarized this away, which would cause your profile picture to warp if the source image wasn't a perfect square.
-
-**The Fix:** I will map the CSS `:root` variables to pull dynamically from your Jekyll Liquid tags (with fallbacks just in case), restore the `.modal.fade.in` hardware acceleration fix, and strictly enforce the `aspect-ratio` on your profile images so they remain perfectly round.
-
-### Round 2: Fluidity & Premium Aesthetics
-
-*Focusing on typography scaling, dark mode eye-strain, and micro-interactions.*
-
-1. **Weakness: Static Typography.** I used rigid font sizes (e.g., `font-size: 5em;` for desktop, `3em;` for mobile). Apple's design system feels seamless because it uses *fluid typography*. The headers should scale smoothly as the browser window resizes, rather than snapping abruptly at specific breakpoints.
-2. **Weakness: High-Contrast Halation in Dark Mode.** I set the dark mode background to true OLED black (`#000000`) with bright text. In web design, this causes "halation" (a glowing effect that causes eye strain). Premium dark modes use deep, rich charcoal grays to keep text legible for recruiters reading complex security audits or playbooks.
-3. **Weakness: Flat Button Interactions.** The buttons merely changed color on hover. High-end minimalist design relies on subtle physical depth.
-
-**The Fix:** Implement CSS `clamp()` functions for the typography so headers scale fluidly between mobile and widescreen. Soften the dark mode background to `#0a0a0c` to eliminate eye strain. Add a subtle `transform: scale(0.98)` to buttons on active click to mimic a physical button press.
-
-### Round 3: Specificity Bloat & Clean Up
-
-*Focusing on legacy Bootstrap overrides, hacky CSS drawing, and print readiness.*
-
-1. **Weakness: Bootstrap 3 Specificity Wars.** The navigation CSS relies on long, heavy selectors like `.navbar-default .navbar-nav > li > a`. This is legacy cruft that makes the code harder to read and harder to override later.
-2. **Weakness: The Hacky Modal "X".** The modal close button relies on two separate empty `div`s (`.lr` and `.rl`) rotated at 45 degrees to draw an 'X'. This is an outdated Bootstrap 3 hack that clutters the HTML.
-3. **Weakness: No Print Styles.** As a professional transitioning into a high-level technical field, recruiters or hiring managers might print your portfolio page or resume. The current CSS would print a massive black background if dark mode is on, wasting ink and looking terrible on paper.
-
-**The Fix:** Strip out the unnecessary `.navbar-default` parent selectors. Replace the hacky `.lr` and `.rl` HTML dependencies with clean CSS `::before` and `::after` pseudo-elements. Finally, add a robust `@media print` query at the bottom to ensure your portfolio prints beautifully in crisp black and white.
-
----
-
-### The Final, Master Refactor
-
-*Note: Because this file utilizes Jekyll Liquid tags (`{{ ... }}`), ensure your file has empty YAML front matter (two sets of three dashes `---` on lines 1 and 3) at the very top of the file so Jekyll knows to compile it.*
-
-```css
 ---
 ---
 /*!
@@ -532,5 +487,3 @@ footer .footer-below {
         border: 1px solid #ccc !important;
     }
 }
-
-```

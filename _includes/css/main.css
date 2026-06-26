@@ -2,50 +2,50 @@
 ---
 /*!
  * Start Bootstrap - Freelancer (Refactored for Apple-Premium Aesthetic)
- * Precision-engineered for robust overrides, fluid motion, and strict minimalist design.
+ * Marries the exact structural layout of your original site with elite visual polish.
  */
 
 /* ==========================================================================
-   1. Global CSS Variables & Failsafe Jekyll Integration
+   1. Premium Variable System & Color Profiles
    ========================================================================== */
 :root {
-    /* Safe Liquid injection with hardcoded hex fallbacks */
+    /* Hardcoded high-contrast color fallbacks */
     --accent-color: #0066cc;
     --bg-secondary-light: #f5f5f7;
     --text-dark-core: #1d1d1f;
     
-    /* Light Mode Base */
+    /* Light Mode Interface Matrix */
     --bg-primary: #ffffff;
     --bg-secondary: var(--bg-secondary-light);
-    --bg-glass: rgba(255, 255, 255, 0.85);
-    --bg-glass-heavy: rgba(255, 255, 255, 0.95);
+    --bg-glass: rgba(255, 255, 255, 0.80);
+    --bg-glass-heavy: rgba(255, 255, 255, 0.96);
     
     --text-primary: var(--text-dark-core);
     --text-secondary: #6e6e73;
     --text-tertiary: #86868b;
     
     --btn-primary-bg: var(--text-dark-core);
-    --btn-primary-hover: #333336;
+    --btn-primary-hover: #2d2d30;
     --btn-text: #ffffff;
     
     --border-light: #e5e5ea;
     --border-medium: #d2d2d7;
     
     --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
-    --focus-ring: rgba(0, 102, 204, 0.3);
+    --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.08);
+    --focus-ring: rgba(0, 102, 204, 0.25);
     
-    /* Apple Motion Curve */
+    /* Apple-Standard Inertial Curve */
     --motion-curve: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Premium Dark Mode Base (Prevents OLED halation) */
-        --bg-primary: #0a0a0c; 
-        --bg-secondary: #141415;
-        --bg-glass: rgba(10, 10, 12, 0.85);
-        --bg-glass-heavy: rgba(10, 10, 12, 0.95);
+        /* Softened Dark Mode Matrix (Eliminates Halation) */
+        --bg-primary: #0e0e10; 
+        --bg-secondary: #1c1c1e;
+        --bg-glass: rgba(14, 14, 16, 0.80);
+        --bg-glass-heavy: rgba(14, 14, 16, 0.96);
         
         --text-primary: #f5f5f7;
         --text-secondary: #a1a1a6;
@@ -59,14 +59,18 @@
         --border-light: #2c2c2e;
         --border-medium: #3a3a3c;
         
-        --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.4);
-        --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.6);
-        --focus-ring: rgba(41, 151, 255, 0.3);
+        --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 12px 36px rgba(0, 0, 0, 0.5);
+        --focus-ring: rgba(41, 151, 255, 0.35);
     }
 }
 
+/* Custom Text Highlight Overrides */
+::selection { background: var(--focus-ring); color: var(--text-primary); }
+::-moz-selection { background: var(--focus-ring); color: var(--text-primary); }
+
 /* ==========================================================================
-   2. Core Base Styles & Fluid Typography
+   2. Core Architecture & Typographic Layout
    ========================================================================== */
 body {
     overflow-x: hidden;
@@ -75,7 +79,7 @@ body {
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s var(--motion-curve), color 0.3s var(--motion-curve);
+    transition: background-color 0.4s var(--motion-curve), color 0.4s var(--motion-curve);
 }
 
 img {
@@ -84,13 +88,14 @@ img {
     -webkit-user-drag: none;
 }
 
+/* System-Level Focus Indicator Overrides */
 a:focus-visible,
 .btn:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
     outline: none !important;
     box-shadow: 0 0 0 4px var(--focus-ring) !important;
-    transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s var(--motion-curve);
 }
 
 p {
@@ -99,7 +104,7 @@ p {
     font-weight: 400;
     letter-spacing: -0.011em;
     color: var(--text-secondary);
-    max-width: 75ch; /* Enforces legibility for technical content */
+    max-width: 72ch; /* Premium Reading Length Metric */
     margin-left: auto;
     margin-right: auto;
 }
@@ -110,14 +115,18 @@ p.small {
     color: var(--text-tertiary);
 }
 
-a, a:hover, a:focus, a:active, a.active {
-    outline: 0;
+a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: opacity 0.2s ease, color 0.2s ease;
+    transition: opacity 0.2s var(--motion-curve), color 0.2s var(--motion-curve);
 }
-
-a:hover { opacity: 0.7; }
+a:hover, a:focus {
+    text-decoration: none;
+    opacity: 0.75;
+}
+a:active, a.active {
+    outline: 0;
+}
 
 h1, h2, h3, h4, h5, h6 {
     text-transform: none;
@@ -128,27 +137,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   3. Utilities & Dividers
+   3. Visual Polish: Separators & Utilities
    ========================================================================== */
 hr.star-light, hr.star-primary {
-    margin: 40px auto;
+    margin: 35px auto;
     padding: 0;
     max-width: 100%;
-    width: 80px;
+    width: 64px;
     border: 0;
-    border-top: solid 1px var(--border-medium);
+    border-top: solid 2px var(--border-medium);
     text-align: center;
-    overflow: visible;
 }
 
 hr.star-light:after, hr.star-primary:after {
-    content: none !important;
+    content: none !important; /* Strips older icon configurations safely */
 }
 
 .img-centered { margin: 0 auto; }
 
 /* ==========================================================================
-   4. Navigation Component (Restored Active States)
+   4. Framework Layout: Fixed Navigation System
    ========================================================================== */
 .navbar {
     text-transform: none;
@@ -157,21 +165,20 @@ hr.star-light:after, hr.star-primary:after {
     font-size: 14px;
     border: 0;
     background: var(--bg-primary);
+    transition: background 0.3s var(--motion-curve), padding 0.3s var(--motion-curve);
 }
-
-.navbar a:focus { outline: 0; }
 
 .navbar-brand, .navbar-nav > li > a {
     color: var(--text-primary) !important;
     font-weight: 600;
-    transition: color 0.2s ease;
+    transition: color 0.2s var(--motion-curve);
 }
 
 .navbar-brand:hover, .navbar-nav > li > a:hover {
     color: var(--accent-color) !important;
 }
 
-/* Restored critical active state */
+/* High Contrast Framework State Recovery */
 .navbar-nav > .active > a {
     background-color: var(--bg-secondary) !important;
     color: var(--accent-color) !important;
@@ -187,25 +194,24 @@ hr.star-light:after, hr.star-primary:after {
     background-color: var(--text-primary) !important;
 }
 
-.navbar-toggle:hover, .navbar-toggle:focus {
-    background-color: var(--bg-secondary) !important;
-}
+/* Desktop Navigation Alignment */
+@media(min-width: 768px) {
+    .navbar-fixed-top {
+        padding: 18px 0;
+        background: var(--bg-glass) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-light);
+    }
 
-.navbar-fixed-top {
-    padding: 16px 0;
-    background: var(--bg-glass) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-light);
-    transition: padding 0.3s var(--motion-curve);
-}
-
-.navbar-fixed-top.navbar-shrink {
-    padding: 10px 0;
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+        background: var(--bg-glass-heavy) !important;
+    }
 }
 
 /* ==========================================================================
-   5. Header Component & Structural Layout
+   5. Main Profile Header & Section Containers
    ========================================================================== */
 header {
     text-align: center;
@@ -213,14 +219,14 @@ header {
 }
 
 header .container {
-    padding-top: clamp(140px, 15vw, 200px);
-    padding-bottom: clamp(80px, 10vw, 120px);
+    padding-top: clamp(130px, 14vw, 180px);
+    padding-bottom: clamp(70px, 9vw, 110px);
 }
 
 .header-image {
     display: block;
-    margin: 0 auto 30px;
-    width: clamp(100px, 18vw, 130px);
+    margin: 0 auto 25px;
+    width: clamp(110px, 15vw, 140px);
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
@@ -230,28 +236,28 @@ header .container {
 header .intro-text .name {
     display: block;
     text-transform: none;
-    font-size: clamp(3em, 6vw, 5em);
+    font-size: clamp(2.6em, 5vw, 4.4em);
     font-weight: 700;
     letter-spacing: -0.025em;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 header .intro-text .skills {
-    font-size: clamp(1.5em, 3vw, 2em);
+    font-size: clamp(1.3em, 2.5vw, 1.8em);
     font-weight: 400;
     color: var(--text-secondary);
-    margin-top: 15px;
+    margin-top: 12px;
     letter-spacing: -0.015em;
 }
 
-section { padding: clamp(60px, 10vw, 120px) 0; }
+section { padding: clamp(70px, 8vw, 110px) 0; }
 
-/* Restored dedicated clearance for fixed navbars */
-section.first { padding-top: clamp(80px, 12vw, 140px); }
+/* Structural Fix: Matches Original Fixed Navbar Footprint */
+section.first { padding-top: clamp(110px, 12vw, 150px); }
 
 section h2 {
-    margin: 0;
-    font-size: clamp(2.4em, 5vw, 3.2em);
+    margin: 0 0 10px;
+    font-size: clamp(2.2em, 4vw, 3em);
     font-weight: 700;
     letter-spacing: -0.03em;
 }
@@ -263,34 +269,33 @@ section.success {
 }
 
 /* ==========================================================================
-   6. Portfolio Grid Component (Z-Index Restored)
+   6. Portfolio Components & Display Grid Mechanics
    ========================================================================== */
-#portfolio .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 0 15px;
-}
-
 #portfolio * { z-index: 2; }
 
-#portfolio .portfolio-item { margin: 0; }
+/* Preserves original layout scaffolding cleanly without column breakage */
+#portfolio .portfolio-item {
+    margin: 0 0 30px;
+    right: 0;
+}
 
 #portfolio .portfolio-item .portfolio-link {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 350px;
-    border-radius: 16px;
+    max-width: 360px;
+    border-radius: 14px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    background: var(--bg-secondary);
     will-change: transform, box-shadow;
     transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     transition: transform 0.4s var(--motion-curve), box-shadow 0.4s var(--motion-curve);
 }
 
 #portfolio .portfolio-item .portfolio-link:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     box-shadow: var(--shadow-md);
 }
 
@@ -300,9 +305,9 @@ section.success {
     height: 100%;
     opacity: 0;
     background: var(--bg-glass-heavy);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    transition: opacity 0.4s var(--motion-curve);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: opacity 0.35s var(--motion-curve);
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover { opacity: 1; }
@@ -312,14 +317,40 @@ section.success {
     top: 50%;
     width: 100%;
     transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     text-align: center;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-primary);
+    padding: 0 20px;
 }
 
 /* ==========================================================================
-   7. Base Buttons & Forms
+   7. Form Modules & Input Fields
+   ========================================================================== */
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: .5em;
+    border-bottom: 1px solid var(--border-medium);
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+    z-index: 1;
+    position: relative;
+    padding: 5px 0;
+    border: 0;
+    font-size: 1.2em;
+    background: transparent;
+    color: var(--text-primary);
+    box-shadow: none !important;
+    resize: none;
+    width: 100%;
+}
+
+/* ==========================================================================
+   8. Specific Framework Overrides (Button Elements)
    ========================================================================== */
 .btn-outline, .resume-button {
     display: inline-flex;
@@ -333,41 +364,13 @@ section.success {
     padding: 12px 26px;
     border-radius: 30px;
     letter-spacing: -0.01em;
-    transition: background 0.2s ease, transform 0.1s var(--motion-curve);
+    transition: background 0.2s ease, transform 0.15s var(--motion-curve);
     cursor: pointer;
 }
+.btn-outline:hover, .resume-button:hover { background: var(--btn-primary-hover) !important; }
+.btn-outline:active, .resume-button:active { transform: scale(0.97); }
 
-.btn-outline:hover, .resume-button:hover {
-    background: var(--btn-primary-hover) !important;
-}
-.btn-outline:active, .resume-button:active {
-    transform: scale(0.98);
-}
-
-.floating-label-form-group {
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: .5em;
-    border-bottom: 1px solid var(--border-medium);
-}
-
-.floating-label-form-group input,
-.floating-label-form-group textarea {
-    z-index: 1;
-    position: relative;
-    padding: 0;
-    border: 0;
-    font-size: 1.2em;
-    background: transparent;
-    color: var(--text-primary);
-    box-shadow: none !important;
-    resize: none;
-}
-
-/* ==========================================================================
-   8. High Specificity Overrides (Restored From Original Code)
-   ========================================================================== */
-/* Premium Pill-Shaped Modal Action Link Buttons */
+/* Deep Portfolio Modal Window Action Links */
 .portfolio-modal .modal-content .btn.modal-view-button {
     display: inline-block !important;
     background-color: var(--btn-primary-bg) !important;
@@ -379,62 +382,55 @@ section.success {
     font-weight: 500 !important;
     font-size: 14px !important;
     letter-spacing: -0.01em !important;
-    transition: background-color 0.2s ease, transform 0.1s var(--motion-curve) !important;
-    text-decoration: none !important;
     box-shadow: none !important;
+    transition: background-color 0.2s ease, transform 0.15s var(--motion-curve) !important;
+    text-decoration: none !important;
 }
-
 .portfolio-modal .modal-content .btn.modal-view-button:hover,
 .portfolio-modal .modal-content .btn.modal-view-button:focus {
     background-color: var(--btn-primary-hover) !important;
     color: var(--btn-text) !important;
     outline: 0 !important;
 }
-.portfolio-modal .modal-content .btn.modal-view-button:active {
-    transform: scale(0.98) !important;
-}
+.portfolio-modal .modal-content .btn.modal-view-button:active { transform: scale(0.97) !important; }
 
-/* Portfolio Direct Link */
+/* Direct Work Reference Anchor Mapping */
 .portfolio-modal .modal-body a.portfolio-direct-link {
     display: inline-block !important;
     background-color: var(--btn-primary-bg) !important;
-    background-clip: padding-box !important;
     color: var(--btn-text) !important;
     border: none !important;
     border-radius: 30px !important;
     padding: 12px 26px !important;
     text-decoration: none !important;
     opacity: 1 !important;
-    transition: background-color 0.2s ease, transform 0.1s var(--motion-curve) !important;
+    transition: background-color 0.2s ease, transform 0.15s var(--motion-curve) !important;
 }
-
 .portfolio-modal .modal-body a.portfolio-direct-link:hover,
 .portfolio-modal .modal-body a.portfolio-direct-link:focus {
     background-color: var(--btn-primary-hover) !important;
     color: var(--btn-text) !important;
 }
-.portfolio-modal .modal-body a.portfolio-direct-link:active {
-    transform: scale(0.98) !important;
-}
+.portfolio-modal .modal-body a.portfolio-direct-link:active { transform: scale(0.97) !important; }
 
 /* ==========================================================================
-   9. Footer Component
+   9. Footer Architecture
    ========================================================================== */
 footer {
     color: var(--text-tertiary);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 footer h3 {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-primary);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 footer .footer-above {
     padding-top: 60px;
     background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-medium);
+    border-top: 1px solid var(--border-light);
 }
 
 footer .footer-col { margin-bottom: 40px; }
@@ -443,38 +439,40 @@ footer .footer-col p { color: var(--text-secondary); }
 footer .footer-below {
     padding: 30px 0;
     background-color: var(--bg-secondary);
-    border-top: 1px solid var(--border-medium);
+    border-top: 1px solid var(--border-light);
 }
 
+/* Tactical Touch Targets (A11y Compliant) */
 .btn-social {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     width: 44px;
     height: 44px;
-    border-radius: 100%;
+    border-radius: 50%;
     font-size: 18px;
     color: var(--btn-text) !important;
     background: var(--btn-primary-bg) !important;
-    transition: background .2s ease, transform 0.1s var(--motion-curve);
+    transition: background 0.2s ease, transform 0.15s var(--motion-curve);
 }
-
 .btn-social:hover { background: var(--btn-primary-hover) !important; }
-.btn-social:active { transform: scale(0.95); }
+.btn-social:active { transform: scale(0.94); }
 
 /* ==========================================================================
-   10. Modals & UI Controls
+   10. Modals & Interface Controllers
    ========================================================================== */
 .modal.fade.in {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
 
-/* Apple-style backdrop blur for active modals */
+/* Layered Glass Transition Base */
 .modal-backdrop.in {
-    opacity: 0.5;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    opacity: 0.4;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: #000;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-top {
@@ -483,70 +481,80 @@ footer .footer-below {
     right: 2%;
     bottom: 2%;
 }
-
 .scroll-top .btn {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
     background: var(--bg-glass);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-medium);
     color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s var(--motion-curve);
 }
+.scroll-top .btn:active { transform: scale(0.94); }
 
 .portfolio-modal .modal-content {
-    padding: 80px 0;
+    padding: 70px 0;
     background-color: var(--bg-primary);
     min-height: 100vh;
+    border: none;
+    box-shadow: none;
 }
 
 @media (max-width: 767px) {
-    .portfolio-modal { bottom: 60px !important; }
+    .portfolio-modal { bottom: 0 !important; }
     .portfolio-modal .modal-content {
         padding: 40px 0;
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     }
 }
 
 .portfolio-modal .modal-content h2 {
-    font-size: 2.5em;
+    font-size: 2.4em;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.portfolio-modal .modal-content img { margin-bottom: 30px; }
-.portfolio-modal .modal-content .item-details { margin: 25px 0; }
+.portfolio-modal .modal-content img { margin-bottom: 25px; }
+.portfolio-modal .modal-content .item-details { margin: 20px 0; }
 
+/* Structural Restoration: Keeps Layout Context Constrained */
 .portfolio-image {
     display: block;
-    max-width: 35%; /* Restored explicit maximum width from original code */
+    max-width: 35%; 
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 18px;
+    border-radius: 14px;
     box-shadow: var(--shadow-sm);
 }
 
+@media (max-width: 991px) {
+    .portfolio-image { max-width: 60%; }
+}
+@media (max-width: 767px) {
+    .portfolio-image { max-width: 85%; }
+}
+
+/* CSS-Engine Driven Premium Close Controller Box */
 .portfolio-modal .close-modal {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     width: 44px;
     height: 44px;
     background-color: var(--bg-secondary);
     border-radius: 50%;
     cursor: pointer;
     z-index: 1060;
-    transition: background-color 0.2s ease, transform 0.1s var(--motion-curve);
+    transition: background-color 0.2s ease, transform 0.15s var(--motion-curve);
 }
-
 .portfolio-modal .close-modal:hover { background-color: var(--border-medium); }
-.portfolio-modal .close-modal:active { transform: scale(0.95); }
+.portfolio-modal .close-modal:active { transform: scale(0.94); }
 
 .portfolio-modal .close-modal::before,
 .portfolio-modal .close-modal::after {
@@ -555,33 +563,25 @@ footer .footer-below {
     top: 50%;
     left: 50%;
     width: 2px;
-    height: 18px;
+    height: 16px;
     background-color: var(--text-primary);
 }
 .portfolio-modal .close-modal::before { transform: translate(-50%, -50%) rotate(45deg); }
 .portfolio-modal .close-modal::after { transform: translate(-50%, -50%) rotate(-45deg); }
 
 /* ==========================================================================
-   11. Print Media Query (For Physical Audit Reports/Resumes)
+   11. Media Environment Query: Print Architecture
    ========================================================================== */
 @media print {
     :root {
         --bg-primary: #ffffff !important;
         --text-primary: #000000 !important;
-        --text-secondary: #333333 !important;
+        --text-secondary: #2c2c2e !important;
         --bg-secondary: #ffffff !important;
     }
     
     body { background: #ffffff !important; color: #000000 !important; }
-    
-    .navbar, footer, .btn-social, .scroll-top, .btn-outline {
-        display: none !important;
-    }
-    
-    section { padding: 20px 0 !important; }
-    
-    #portfolio .portfolio-item .portfolio-link {
-        box-shadow: none !important;
-        border: 1px solid #ccc !important;
-    }
+    .navbar, footer, .btn-social, .scroll-top, .btn-outline, .close-modal { display: none !important; }
+    section { padding: 15px 0 !important; }
+    #portfolio .portfolio-item .portfolio-link { box-shadow: none !important; border: 1px solid #d2d2d7 !important; }
 }

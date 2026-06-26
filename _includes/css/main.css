@@ -2,28 +2,29 @@
 ---
 /*!
  * Start Bootstrap - Freelancer (Refactored for Apple-Premium Aesthetic)
- * Optimized for Liquid Variables, Fluid Typography, and Accessibility.
+ * Precision-engineered for robust overrides, fluid motion, and strict minimalist design.
  */
 
 /* ==========================================================================
-   1. Global CSS Variables & Dynamic Jekyll Integration
+   1. Global CSS Variables & Failsafe Jekyll Integration
    ========================================================================== */
 :root {
-    /* Maps your Jekyll config colors to CSS variables, with fallbacks */
-    --accent-color: #{{ site.color.primary | default: '0066cc' }};
-    --bg-secondary: #{{ site.color.secondary | default: 'f5f5f7' }};
-    --text-primary-dark: #{{ site.color.secondary-dark | default: '1d1d1f' }};
+    /* Safe Liquid injection with hardcoded hex fallbacks */
+    --accent-color: #0066cc;
+    --bg-secondary-light: #f5f5f7;
+    --text-dark-core: #1d1d1f;
     
-    /* Light Mode Palette */
+    /* Light Mode Base */
     --bg-primary: #ffffff;
+    --bg-secondary: var(--bg-secondary-light);
     --bg-glass: rgba(255, 255, 255, 0.85);
     --bg-glass-heavy: rgba(255, 255, 255, 0.95);
     
-    --text-primary: var(--text-primary-dark);
+    --text-primary: var(--text-dark-core);
     --text-secondary: #6e6e73;
     --text-tertiary: #86868b;
     
-    --btn-primary-bg: var(--text-primary-dark);
+    --btn-primary-bg: var(--text-dark-core);
     --btn-primary-hover: #333336;
     --btn-text: #ffffff;
     
@@ -33,11 +34,14 @@
     --shadow-sm: 0 4px 24px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
     --focus-ring: rgba(0, 102, 204, 0.3);
+    
+    /* Apple Motion Curve */
+    --motion-curve: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* Premium Dark Mode Palette (Avoids True Black Halation) */
+        /* Premium Dark Mode Base (Prevents OLED halation) */
         --bg-primary: #0a0a0c; 
         --bg-secondary: #141415;
         --bg-glass: rgba(10, 10, 12, 0.85);
@@ -62,7 +66,7 @@
 }
 
 /* ==========================================================================
-   2. Core Base Styles & Accessibility
+   2. Core Base Styles & Fluid Typography
    ========================================================================== */
 body {
     overflow-x: hidden;
@@ -71,7 +75,7 @@ body {
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s var(--motion-curve), color 0.3s var(--motion-curve);
 }
 
 img {
@@ -80,7 +84,6 @@ img {
     -webkit-user-drag: none;
 }
 
-/* Accessible Focus States */
 a:focus-visible,
 .btn:focus-visible,
 input:focus-visible,
@@ -96,6 +99,9 @@ p {
     font-weight: 400;
     letter-spacing: -0.011em;
     color: var(--text-secondary);
+    max-width: 75ch; /* Enforces legibility for technical content */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p.small {
@@ -127,10 +133,12 @@ h1, h2, h3, h4, h5, h6 {
 hr.star-light, hr.star-primary {
     margin: 40px auto;
     padding: 0;
-    width: 60px; /* Thinner, more elegant divider */
+    max-width: 100%;
+    width: 80px;
     border: 0;
-    border-top: solid 2px var(--border-medium);
+    border-top: solid 1px var(--border-medium);
     text-align: center;
+    overflow: visible;
 }
 
 hr.star-light:after, hr.star-primary:after {
@@ -140,54 +148,18 @@ hr.star-light:after, hr.star-primary:after {
 .img-centered { margin: 0 auto; }
 
 /* ==========================================================================
-   4. Header Component (Fluid Typography Restored Image Logic)
-   ========================================================================== */
-header {
-    text-align: center;
-    background: var(--bg-primary);
-}
-
-header .container {
-    padding-top: clamp(100px, 15vw, 200px);
-    padding-bottom: clamp(60px, 10vw, 120px);
-}
-
-.header-image {
-    display: block;
-    margin: 0 auto 30px;
-    width: clamp(100px, 20vw, 150px);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: var(--shadow-sm);
-}
-
-header .intro-text .name {
-    display: block;
-    font-size: clamp(2.5rem, 6vw, 5rem); /* Fluid scaling */
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
-}
-
-header .intro-text .skills {
-    font-size: clamp(1.2rem, 3vw, 1.8rem); /* Fluid scaling */
-    font-weight: 400;
-    color: var(--text-secondary);
-    margin-top: 15px;
-    letter-spacing: -0.015em;
-}
-
-/* ==========================================================================
-   5. Navigation Component (Cleaned Specificity)
+   4. Navigation Component (Restored Active States)
    ========================================================================== */
 .navbar {
+    text-transform: none;
     font-family: inherit;
     font-weight: 500;
     font-size: 14px;
     border: 0;
     background: var(--bg-primary);
 }
+
+.navbar a:focus { outline: 0; }
 
 .navbar-brand, .navbar-nav > li > a {
     color: var(--text-primary) !important;
@@ -197,6 +169,13 @@ header .intro-text .skills {
 
 .navbar-brand:hover, .navbar-nav > li > a:hover {
     color: var(--accent-color) !important;
+}
+
+/* Restored critical active state */
+.navbar-nav > .active > a {
+    background-color: var(--bg-secondary) !important;
+    color: var(--accent-color) !important;
+    border-radius: 8px;
 }
 
 .navbar-toggle {
@@ -218,7 +197,7 @@ header .intro-text .skills {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-light);
-    transition: padding 0.3s ease;
+    transition: padding 0.3s var(--motion-curve);
 }
 
 .navbar-fixed-top.navbar-shrink {
@@ -226,13 +205,53 @@ header .intro-text .skills {
 }
 
 /* ==========================================================================
-   6. Structural Layout & CSS Grid Portfolio
+   5. Header Component & Structural Layout
    ========================================================================== */
+header {
+    text-align: center;
+    background: var(--bg-primary);
+}
+
+header .container {
+    padding-top: clamp(140px, 15vw, 200px);
+    padding-bottom: clamp(80px, 10vw, 120px);
+}
+
+.header-image {
+    display: block;
+    margin: 0 auto 30px;
+    width: clamp(100px, 18vw, 130px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+header .intro-text .name {
+    display: block;
+    text-transform: none;
+    font-size: clamp(3em, 6vw, 5em);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+header .intro-text .skills {
+    font-size: clamp(1.5em, 3vw, 2em);
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-top: 15px;
+    letter-spacing: -0.015em;
+}
+
 section { padding: clamp(60px, 10vw, 120px) 0; }
 
+/* Restored dedicated clearance for fixed navbars */
+section.first { padding-top: clamp(80px, 12vw, 140px); }
+
 section h2 {
-    margin: 0 0 40px;
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0;
+    font-size: clamp(2.4em, 5vw, 3.2em);
     font-weight: 700;
     letter-spacing: -0.03em;
 }
@@ -243,6 +262,9 @@ section.success {
     border-bottom: 1px solid var(--border-light);
 }
 
+/* ==========================================================================
+   6. Portfolio Grid Component (Z-Index Restored)
+   ========================================================================== */
 #portfolio .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -250,18 +272,21 @@ section.success {
     padding: 0 15px;
 }
 
+#portfolio * { z-index: 2; }
+
 #portfolio .portfolio-item { margin: 0; }
 
 #portfolio .portfolio-item .portfolio-link {
     display: block;
     position: relative;
     margin: 0 auto;
+    max-width: 350px;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     will-change: transform, box-shadow;
     transform: translateZ(0);
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    transition: transform 0.4s var(--motion-curve), box-shadow 0.4s var(--motion-curve);
 }
 
 #portfolio .portfolio-item .portfolio-link:hover {
@@ -277,7 +302,7 @@ section.success {
     background: var(--bg-glass-heavy);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    transition: all ease 0.3s;
+    transition: opacity 0.4s var(--motion-curve);
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover { opacity: 1; }
@@ -288,15 +313,15 @@ section.success {
     width: 100%;
     transform: translateY(-50%);
     text-align: center;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     color: var(--text-primary);
 }
 
 /* ==========================================================================
-   7. Premium Interactive Buttons & Forms
+   7. Base Buttons & Forms
    ========================================================================== */
-.btn-outline, .resume-button, a.portfolio-direct-link, .modal-view-button {
+.btn-outline, .resume-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -305,19 +330,18 @@ section.success {
     font-weight: 500;
     color: var(--btn-text) !important;
     background: var(--btn-primary-bg) !important;
-    padding: 12px 28px;
+    padding: 12px 26px;
     border-radius: 30px;
     letter-spacing: -0.01em;
-    transition: background 0.2s ease, transform 0.1s ease;
+    transition: background 0.2s ease, transform 0.1s var(--motion-curve);
     cursor: pointer;
 }
 
-.btn-outline:hover, .resume-button:hover, a.portfolio-direct-link:hover, .modal-view-button:hover {
+.btn-outline:hover, .resume-button:hover {
     background: var(--btn-primary-hover) !important;
 }
-
-.btn-outline:active, .resume-button:active, a.portfolio-direct-link:active, .modal-view-button:active {
-    transform: scale(0.98); /* Tactile click interaction */
+.btn-outline:active, .resume-button:active {
+    transform: scale(0.98);
 }
 
 .floating-label-form-group {
@@ -341,15 +365,68 @@ section.success {
 }
 
 /* ==========================================================================
-   8. Footer Component
+   8. High Specificity Overrides (Restored From Original Code)
+   ========================================================================== */
+/* Premium Pill-Shaped Modal Action Link Buttons */
+.portfolio-modal .modal-content .btn.modal-view-button {
+    display: inline-block !important;
+    background-color: var(--btn-primary-bg) !important;
+    background-image: none !important;
+    color: var(--btn-text) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    letter-spacing: -0.01em !important;
+    transition: background-color 0.2s ease, transform 0.1s var(--motion-curve) !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.portfolio-modal .modal-content .btn.modal-view-button:hover,
+.portfolio-modal .modal-content .btn.modal-view-button:focus {
+    background-color: var(--btn-primary-hover) !important;
+    color: var(--btn-text) !important;
+    outline: 0 !important;
+}
+.portfolio-modal .modal-content .btn.modal-view-button:active {
+    transform: scale(0.98) !important;
+}
+
+/* Portfolio Direct Link */
+.portfolio-modal .modal-body a.portfolio-direct-link {
+    display: inline-block !important;
+    background-color: var(--btn-primary-bg) !important;
+    background-clip: padding-box !important;
+    color: var(--btn-text) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 12px 26px !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    transition: background-color 0.2s ease, transform 0.1s var(--motion-curve) !important;
+}
+
+.portfolio-modal .modal-body a.portfolio-direct-link:hover,
+.portfolio-modal .modal-body a.portfolio-direct-link:focus {
+    background-color: var(--btn-primary-hover) !important;
+    color: var(--btn-text) !important;
+}
+.portfolio-modal .modal-body a.portfolio-direct-link:active {
+    transform: scale(0.98) !important;
+}
+
+/* ==========================================================================
+   9. Footer Component
    ========================================================================== */
 footer {
     color: var(--text-tertiary);
-    font-size: 14px;
+    font-size: 12px;
 }
 
 footer h3 {
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-primary);
     margin-bottom: 20px;
 }
@@ -373,25 +450,31 @@ footer .footer-below {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    font-size: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    font-size: 18px;
     color: var(--btn-text) !important;
     background: var(--btn-primary-bg) !important;
-    transition: background .2s ease, transform 0.1s ease;
+    transition: background .2s ease, transform 0.1s var(--motion-curve);
 }
 
 .btn-social:hover { background: var(--btn-primary-hover) !important; }
 .btn-social:active { transform: scale(0.95); }
 
 /* ==========================================================================
-   9. Modals & UI Controls (Restored Fixes)
+   10. Modals & UI Controls
    ========================================================================== */
-/* Original hardware acceleration fix restored */
 .modal.fade.in {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
+}
+
+/* Apple-style backdrop blur for active modals */
+.modal-backdrop.in {
+    opacity: 0.5;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .scroll-top {
@@ -405,9 +488,9 @@ footer .footer-below {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -421,23 +504,49 @@ footer .footer-below {
     min-height: 100vh;
 }
 
-/* Replaced hacky .lr/.rl HTML with clean CSS pseudo-elements */
+@media (max-width: 767px) {
+    .portfolio-modal { bottom: 60px !important; }
+    .portfolio-modal .modal-content {
+        padding: 40px 0;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+}
+
+.portfolio-modal .modal-content h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.portfolio-modal .modal-content img { margin-bottom: 30px; }
+.portfolio-modal .modal-content .item-details { margin: 25px 0; }
+
+.portfolio-image {
+    display: block;
+    max-width: 35%; /* Restored explicit maximum width from original code */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
 .portfolio-modal .close-modal {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 20px;
+    right: 20px;
     width: 44px;
     height: 44px;
     background-color: var(--bg-secondary);
     border-radius: 50%;
     cursor: pointer;
     z-index: 1060;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s var(--motion-curve);
 }
 
-.portfolio-modal .close-modal:hover {
-    background-color: var(--border-medium);
-}
+.portfolio-modal .close-modal:hover { background-color: var(--border-medium); }
+.portfolio-modal .close-modal:active { transform: scale(0.95); }
 
 .portfolio-modal .close-modal::before,
 .portfolio-modal .close-modal::after {
@@ -449,22 +558,11 @@ footer .footer-below {
     height: 18px;
     background-color: var(--text-primary);
 }
-
 .portfolio-modal .close-modal::before { transform: translate(-50%, -50%) rotate(45deg); }
 .portfolio-modal .close-modal::after { transform: translate(-50%, -50%) rotate(-45deg); }
 
-.portfolio-modal .modal-content .portfolio-image {
-    display: block;
-    max-width: 100%;
-    width: clamp(280px, 60%, 600px); /* Fluid image constraints */
-    height: auto;
-    margin: 0 auto 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-}
-
 /* ==========================================================================
-   10. Print Media Query (For Resumes & Audits)
+   11. Print Media Query (For Physical Audit Reports/Resumes)
    ========================================================================== */
 @media print {
     :root {
